@@ -14,8 +14,8 @@ export default defineConfig({
     }
   },
   build: {
-    // minify: false,
+    minify: false,
     cssCodeSplit: false,
-    // modulePreload: false,
+    modulePreload: false,
   }
 })
