@@ -1,0 +1,82 @@
+{
+    "poll": {
+      "Developers": {
+        "id": 1,
+        "question": "What's your favorite programming language?",
+        "options": [
+          {
+            "id": 1,
+            "answer": "Java",
+            "votes": 5
+          },
+          {
+            "id": 2,
+            "answer": "Kotlin",
+            "votes": 10
+          },
+          {
+            "id": 3,
+            "answer": "Zig",
+            "votes": 3
+          },
+          {
+            "id": 4,
+            "answer": "Fortran",
+            "votes": 4
+          }
+        ]
+      },
+      "Gaming": {
+        "id": 2,
+        "question": "Best Gaming Exclusive Of The Year 2023??",
+        "options": [
+          {
+            "id": 1,
+            "answer": "Starfield",
+            "votes": 45
+          },
+          {
+            "id": 2,
+            "answer": "Spiderman 2",
+            "votes": 68
+          },
+          {
+            "id": 3,
+            "answer": "Need For Speed",
+            "votes": 31
+          },
+          {
+            "id": 4,
+            "answer": "Forza Horizon 5",
+            "votes": 7
+          }
+        ]
+      },
+      "Tech": {
+        "id": 3,
+        "question": "Which camera Lens Mount do you use?",
+        "options": [
+          {
+            "id": 1,
+            "answer": "RF and RF-S",
+            "votes": 34
+          },
+          {
+            "id": 2,
+            "answer": "EF, TS-E, MP-E",
+            "votes": 10
+          },
+          {
+            "id": 3,
+            "answer": "Canon EOS R Adapters",
+            "votes": 3
+          },
+          {
+            "id": 4,
+            "answer": "Canon Extenders",
+            "votes": 41
+          }
+        ]
+      }
+    }
+  }

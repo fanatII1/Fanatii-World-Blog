@@ -1,0 +1,256 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;
+
+  --vt-c-black: #181818;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 16px;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  font-family: Roboto,sans-serif;
+}
+
+#app{
+  height: 100%;
+  background-color: #000;
+  overflow: scroll;
+}
+
+#app::-webkit-scrollbar {
+  width: 0.1px;
+  background-color: none;
+}
+
+#app::-webkit-scrollbar-thumb {
+  background-color: #ed1d3c41;
+  border-radius: 2px;
+}
+
+
+/* STYLES APPLICABLE TO NAVIGAITON PAGES DISPLAY ARTICLES */
+#heading-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  #heading-wrapper {
+    margin: 7.5% auto;
+  }
+}
+
+#new-articles-heading{
+  color: #fff;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2% 0 0.5% 0;
+}
+
+#new-articles-heading-read {
+  color: #fff;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2% 0 0.5% 0;
+}
+
+@media screen and (max-width: 1024px) {
+  #new-articles-heading{
+    font-size: 1.9rem;
+  }
+
+  #new-articles-heading-read {
+    font-size: 1.55rem;
+  }
+}
+
+.heading-underline {
+  height: 5px;
+  width: 15%;
+  background-color: #ed1d3b;
+}
+
+
+.all-new-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+  grid-auto-rows: 100%;
+  justify-content: center;
+  gap: 2%;
+  height: 40%;
+  max-height: 850px;
+  padding: 0 5%;
+  margin: 1% 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .all-new-articles {
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .rtc-paragraph {
+    margin: 5% 0 !important;
+  }
+
+  .rtc-img-wrapper {
+    max-height: 450px !important;
+  }
+}
+
+.new-article{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #0f1010;
+  color: #fff;
+  border: 1px solid #ed1d3b;
+  -webkit-box-shadow: 0 0 11px 1.5px #ed1d3b;
+  -moz-box-shadow: 0 0 11px 1.5px #ed1d3b;
+  box-shadow: 0 0 11px 1.5px #ed1d3b;
+  cursor: pointer;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.new-article:hover {
+  transform: scale(1.04);
+}
+
+.new-article-img{
+  display: block;
+  height: 60%;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 5%;
+}
+
+.new-article-title, .date, .category {
+  padding-left: 3%;
+  line-height: 2.35;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.category {
+  padding-left: 0;
+  display: inline;
+  width: 31%;
+}
+
+.developers, .gaming, .tech {
+  padding-left: 2%;
+  margin-left: 3%;
+}
+
+
+.developers, {
+  background-color: #ed1d3b;
+  -webkit-box-shadow: 0 0 11px 1.5px #ed1d3b;
+  -moz-box-shadow: 0 0 11px 1.5px #ed1d3b;
+  box-shadow: 0 0 11px 1.5px #ed1d3b;
+}
+
+.gaming {
+  background-color: #f10de2;
+  -webkit-box-shadow: 0 0 11px 1.5px #f10de2;
+  -moz-box-shadow: 0 0 11px 1.5px #f10de2;
+  box-shadow: 0 0 11px 1.5px #f10de2;
+}
+
+.tech {
+  background-color: #5d00f9;
+  -webkit-box-shadow: 0 0 11px 1.5px #5d00f9;
+  -moz-box-shadow: 0 0 11px 1.5px #5d00f9;
+  box-shadow: 0 0 11px 1.5px #5d00f9;
+}
+
+/*STYLES FOR THE READ ARTICLES PAGE ARE DEFINED HERE BECAUSE THE RICH TEXT EDITOR OF THE CMS MUST HAVE ITS STYLES GLOBAL TO THE HTML PAGE*/
+.article-content {
+  max-width: 1550px;
+  margin: 0 auto;
+}
+
+.rtc-paragraph {
+  margin: 1% 0;
+}
+
+.rtc-img-wrapper {
+  height: 750px;
+  max-height: 525px;
+  width: 95%;
+  margin: 2% auto;
+}
+
+.rtc-img{
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 425px) {
+  .rtc-img-wrapper {
+    max-height: 360px;
+  }
+}
