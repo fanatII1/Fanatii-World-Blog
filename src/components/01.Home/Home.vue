@@ -169,7 +169,7 @@ onMounted(async () => {
   </main>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 #home-wrapper {
     height: 100%;
     overflow: scroll;

@@ -115,7 +115,7 @@ function speakOutArticle(article){
     </footer>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 #article-wrapper {
     height: 100%;
     overflow: scroll;

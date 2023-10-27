@@ -50,7 +50,7 @@ onBeforeMount(() => {
   </main>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 #gaming-wrapper {
     height: 100%;
     overflow: scroll;

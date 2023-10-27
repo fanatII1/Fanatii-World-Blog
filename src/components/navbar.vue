@@ -93,7 +93,7 @@ function changeMobileNavStatus() {
 </template>
 
 
-<style scoped>
+<style lang="scss" scoped>
 nav {
   position: sticky;
   top: 0;
