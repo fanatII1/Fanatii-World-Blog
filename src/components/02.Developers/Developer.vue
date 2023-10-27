@@ -18,7 +18,7 @@ function fetchArticle(id) {
 }
 
 onBeforeMount(() => {
-    // articlesStore.clearSearchArticles();
+    articlesStore.clearSearchArticles();
     articlesStore.fetchAllArticles()
 })
 </script>
