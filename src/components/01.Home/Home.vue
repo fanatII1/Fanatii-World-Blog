@@ -155,14 +155,16 @@ onMounted(async () => {
     <section id="poll">
         <div class="poll-area" v-for="(poll, index) in blogPoll">
             <p class="poll-question">{{ poll.question }}</p>
-            <div class="opt" v-for="answer, answerIndex in poll.options" @click="selectAnswer(answer.id, answerIndex,  poll.id, poll.question, answer.answer, poll)">
-              <div
-               id="percentage"
-               v-if="answer.id === selectedAnswer && poll.id === selectedPoll"
-               :style="{ 'width' : answer.votes * 100 / categoryVotes + '%' }"
-               >
-            </div>
-              <p class="option-name">{{ answer.answer }}</p>
+            <div class="poll-choice">
+                <div class="opt" v-for="answer, answerIndex in poll.options" @click="selectAnswer(answer.id, answerIndex,  poll.id, poll.question, answer.answer, poll)">
+                  <div
+                   id="percentage"
+                   v-if="answer.id === selectedAnswer && poll.id === selectedPoll"
+                   :style="{ 'width' : answer.votes * 100 / categoryVotes + '%' }"
+                   >
+                </div>
+                <p class="option-name">{{ answer.answer }}</p>
+            </div>       
             </div>
         </div>
     </section>
@@ -262,7 +264,7 @@ onMounted(async () => {
 }
 
 .main-title{
-    font-size: 2.5rem;
+    font-size: 2.2rem;
 }
 
 #heading-wrapper{
@@ -280,11 +282,11 @@ onMounted(async () => {
 
 .all-new-articles {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 280px));
     grid-auto-rows: 100%;
     justify-content: center;
     gap: 2%;
-    height: 40%;
+    height: 50%;
     max-height: 850px;
     margin: 3% 0;
     overflow: scroll;
@@ -337,8 +339,15 @@ onMounted(async () => {
 }
 
 .developers, .gaming, .tech {
-    padding: 2%;
+    padding: 0.8%;
     margin-left: 3%;
+    text-align: center;
+    width: 50%;
+    height: 40px;
+    margin-left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .developers {
@@ -379,10 +388,6 @@ onMounted(async () => {
     max-height: 700px;
     padding-bottom: 1%;
     background-color: #0f1010;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 10px;
 }
 
 .poll-question {
@@ -391,9 +396,18 @@ onMounted(async () => {
     background: #242526;
     padding: 2%;
     color: #fff;
-    font-size: 1.65rem;
+    font-size: 1.4rem;
     text-align: center;
     font-weight: 600;
+    height: 14%;
+}
+
+.poll-choice {
+    height: 86%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    font-size: 0.8rem;
 }
 
 .opt {
@@ -436,10 +450,28 @@ onMounted(async () => {
     .all-new-articles {
         height: 50%;
     }
+
     .developers, .gaming, .tech {
-    padding: 0% 2%;
-    margin-left: 3%;
-}
+       padding: 0% 2%;
+       margin-left: 3%;
+    }
+
+    .new-article-title, .date, .category {
+       font-size: 0.9rem;
+    }
+
+    .new-article-img {
+        max-height: 215px;
+    }
+
+    .main-title {
+        font-size: 1.85rem;
+    }
+
+    .title {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -475,8 +507,9 @@ onMounted(async () => {
     }
 
     .title {
-        font-size: 1.05rem !important;
+        font-size: 1rem !important;
         bottom: 3.5%;
+        line-height: 1.6;
     }
 
     .developers, .gaming{

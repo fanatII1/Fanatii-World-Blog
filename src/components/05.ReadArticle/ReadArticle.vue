@@ -46,9 +46,11 @@ const renderOptions = {
         return `<h6 class='rtc-heading-6'>${node.content[0].value}</h6>`
       },
       [BLOCKS.UL_LIST] : (node, children)=>{
+        console.log(node.content[0].content[0].content[0].value)
+        let listItem = node.content[0].content[0].content[0].value;
         return(
-`          <ul class='rtc-list'>
-            ${children}
+`          <ul class='rtc-list' style="list-style: none; margin: 0.5% 0 0.5% 2%;">
+            <li>${listItem}<li/>
           </ul>`
         )
       },
@@ -187,7 +189,7 @@ function speakOutArticle(article){
     width: 85%;
     height: 100%;
     margin: 0 auto;
-    font-size: 1.3rem;
+    font-size: 1.06rem;
     color: #c3c3c3;
     text-align: left;
 }
@@ -199,16 +201,16 @@ function speakOutArticle(article){
 
 #buymeacoffee {
   border-radius: 40px;
-  width: 87%;
+  width: 75%;
   height: 7%;
   background: #242526;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.125rem;
+  font-size: 1.0rem;
   font-weight: 500;
-  max-width: 1150px;
+  max-width: 1000px;
   margin-top: 2%;
 }
 

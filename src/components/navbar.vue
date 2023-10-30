@@ -147,7 +147,7 @@ nav {
   cursor: pointer;
   transition: 0.6s ease-in-out;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 
 .nav-item.active a{
@@ -275,7 +275,7 @@ input:focus{
 
 @media screen and (max-width: 1024px) {
   .nav-item {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 </style>

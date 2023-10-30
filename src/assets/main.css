@@ -99,7 +99,7 @@ body {
 
 #new-articles-heading{
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   text-align: center;
   margin: 2% 0 0.5% 0;
 }
@@ -130,20 +130,47 @@ body {
 
 .all-new-articles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 280px));
   grid-auto-rows: 100%;
   justify-content: center;
   gap: 2%;
-  height: 40%;
+  height: 50%;
   max-height: 850px;
-  padding: 0 5%;
-  margin: 1% 0;
+  margin: 3% 0;
+  overflow: hidden;
+}
+
+.all-new-articles .category {
+  padding: 0.8%;
+  margin-left: 3%;
+  text-align: center;
+  width: 50%;
+  height: 40px;
+  margin-left: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.span-new-article-title {
+  font-size: 1rem;
 }
 
 @media screen and (max-width: 1024px) {
   .all-new-articles {
     height: 50%;
+    grid-template-columns: repeat(auto-fit, minmax(265px, 280px));
   }
+
+  .span-new-article-title {
+    font-size: 0.9rem;
+  }
+
+  .new-article-title, .date, .category {
+    font-size: 0.8rem !important;
+  }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -158,9 +185,10 @@ body {
 
 .new-article{
   height: 100%;
+  padding-bottom: 2%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: #0f1010;
   color: #fff;
   border: 1px solid #ed1d3b;
@@ -180,6 +208,7 @@ body {
   display: block;
   height: 60%;
   width: 100%;
+  max-height: 255px;
   object-fit: cover;
   margin-bottom: 5%;
 }
@@ -198,12 +227,13 @@ body {
 }
 
 .developers, .gaming, .tech {
-  padding-left: 2%;
+  padding: 0.8%;
   margin-left: 3%;
+  text-align: center;
 }
 
 
-.developers, {
+.developers {
   background-color: #ed1d3b;
   -webkit-box-shadow: 0 0 11px 1.5px #ed1d3b;
   -moz-box-shadow: 0 0 11px 1.5px #ed1d3b;
@@ -230,8 +260,17 @@ body {
   margin: 0 auto;
 }
 
+
 .rtc-paragraph {
   margin: 1% 0;
+}
+
+.article-content ol li .rtc-paragraph {
+  font-weight: bold;
+}
+
+.article-content ol .rtc-paragraph {
+  font-weight: bold;
 }
 
 .rtc-img-wrapper {
@@ -247,6 +286,10 @@ body {
   width: 100%;
   margin: 0 auto;
   object-fit: cover;
+}
+
+.rtc-heading-2 {
+  margin: 2.5% 0;
 }
 
 @media screen and (max-width: 425px) {
