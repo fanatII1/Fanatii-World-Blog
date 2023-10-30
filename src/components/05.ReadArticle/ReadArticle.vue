@@ -111,7 +111,7 @@ function speakOutArticle(article){
     
     <footer id="buymeacoffee">
         <p>
-          I'm brewing up extra-special content and insights, just for you and I would appreciate your support in 
+          I'm brewing up special content and insights, just for you & I would appreciate your support in 
           <a href="https://www.buymeacoffee.com/fanatiiworld" id="coffee-link"><b>buying me a coffee.☕</b></a>
         </p>
     </footer>
@@ -208,7 +208,7 @@ function speakOutArticle(article){
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.0rem;
+  font-size: 1rem;
   font-weight: 500;
   max-width: 1000px;
   margin-top: 2%;
@@ -236,6 +236,7 @@ function speakOutArticle(article){
   #buymeacoffee[data-v-fe4562ad] {
     padding: 5%;
     font-size: 0.7rem;
+    width: 85%;
   }
 
   .rtc-img-wrapper {
