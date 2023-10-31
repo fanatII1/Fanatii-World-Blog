@@ -219,8 +219,8 @@ onMounted(async () => {
     width: 100%;
     height: 100%;
     background:  #ed1d3b;
-    background: -webkit-linear-gradient(181deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 60%, rgb(237 29 183 / 68%) 100%);
-    background: linear-gradient(181deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 60%, rgb(237 29 183 / 68%));
+    background: -webkit-linear-gradient(181deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 60%, rgb(255 0 189));
+    background: linear-gradient(181deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 60%, rgb(255 0 189));
     z-index: 2;
 }
 
@@ -264,7 +264,8 @@ onMounted(async () => {
 }
 
 .main-title{
-    font-size: 2.2rem;
+    font-size: 2.35rem;
+    margin-bottom: 2%;
 }
 
 #heading-wrapper{

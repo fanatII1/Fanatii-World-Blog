@@ -73,7 +73,8 @@ body {
 }
 
 #app::-webkit-scrollbar {
-  width: 0.1px;
+  width: 0.1px; .
+  git co
   background-color: none;
 }
 
