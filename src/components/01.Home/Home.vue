@@ -218,9 +218,9 @@ onMounted(async () => {
     top: 0;
     width: 100%;
     height: 100%;
-    background: #ed1d3b;
-    background: -webkit-linear-gradient(181deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, #ed1d3cad 100%);
-    background: linear-gradient(181deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, #ed1d3cad);
+    background:  #ed1d3b;
+    background: -webkit-linear-gradient(181deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 60%, rgb(237 29 183 / 68%) 100%);
+    background: linear-gradient(181deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 60%, rgb(237 29 183 / 68%));
     z-index: 2;
 }
 
@@ -277,7 +277,7 @@ onMounted(async () => {
 .heading-underline {
     height: 5px;
     width: 15%;
-    background-color: #ed1d3b;
+    background-color:  #ed1d3b;
 }
 
 .all-new-articles {
@@ -306,10 +306,10 @@ onMounted(async () => {
     height: 100%;
     background-color: #0f1010;
     color: #fff;
-    border: 1px solid #ed1d3b;
-    -webkit-box-shadow: 0 0 11px 1.5px #ed1d3b;
-    -moz-box-shadow: 0 0 11px 1.5px #ed1d3b;
-    box-shadow: 0 0 11px 1.5px #ed1d3b;
+    border: 1px solid  #ed1d3b;
+    -webkit-box-shadow: 0 0 11px 1.5px  #ed1d3b;
+    -moz-box-shadow: 0 0 11px 1.5px  #ed1d3b;
+    box-shadow: 0 0 11px 1.5px  #ed1d3b;
     cursor: pointer;
     transition: .4s;
 }
@@ -351,10 +351,10 @@ onMounted(async () => {
 }
 
 .developers {
-    background-color: #ed1d3b;
-    -webkit-box-shadow: 0 0 11px 1.5px #ed1d3b;
-    -moz-box-shadow: 0 0 11px 1.5px #ed1d3b;
-    box-shadow: 0 0 11px 1.5px #ed1d3b;
+    background-color:  #ed1d3b;
+    -webkit-box-shadow: 0 0 11px 1.5px  #ed1d3b;
+    -moz-box-shadow: 0 0 11px 1.5px  #ed1d3b;
+    box-shadow: 0 0 11px 1.5px  #ed1d3b;
 }
 
 .gaming {
@@ -419,10 +419,10 @@ onMounted(async () => {
     padding: 5%;
     color: #fff;
     font-weight: 600;
-    border: 1px solid #ed1d3b;
-    -webkit-box-shadow: 0 0 11px 1.5px #ed1d3b;
-    -moz-box-shadow: 0 0 11px 1.5px #ed1d3b;
-    box-shadow: 0 0 11px 1.5px #ed1d3b;
+    border: 1px solid  #ed1d3b;
+    -webkit-box-shadow: 0 0 11px 1.5px  #ed1d3b;
+    -moz-box-shadow: 0 0 11px 1.5px  #ed1d3b;
+    box-shadow: 0 0 11px 1.5px  #ed1d3b;
     cursor: pointer;
     transition: .4s;
     height: 10%;
@@ -442,7 +442,7 @@ onMounted(async () => {
     left: 0;
     top: 0;
     height: 100%;
-    background: #ed1d3b;
+    background:  #ed1d3b;
     z-index: 2;
 }
 

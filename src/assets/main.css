@@ -124,7 +124,7 @@ body {
 .heading-underline {
   height: 5px;
   width: 15%;
-  background-color: #ed1d3b;
+  background-color:  #ed1d3b;
 }
 
 
@@ -191,10 +191,10 @@ body {
   justify-content: space-between;
   background-color: #0f1010;
   color: #fff;
-  border: 1px solid #ed1d3b;
-  -webkit-box-shadow: 0 0 11px 1.5px #ed1d3b;
-  -moz-box-shadow: 0 0 11px 1.5px #ed1d3b;
-  box-shadow: 0 0 11px 1.5px #ed1d3b;
+  border: 1px solid  #ed1d3b;
+  -webkit-box-shadow: 0 0 11px 1.5px  #ed1d3b;
+  -moz-box-shadow: 0 0 11px 1.5px  #ed1d3b;
+  box-shadow: 0 0 11px 1.5px  #ed1d3b;
   cursor: pointer;
   overflow: hidden;
   transition: .4s;
@@ -234,10 +234,10 @@ body {
 
 
 .developers {
-  background-color: #ed1d3b;
-  -webkit-box-shadow: 0 0 11px 1.5px #ed1d3b;
-  -moz-box-shadow: 0 0 11px 1.5px #ed1d3b;
-  box-shadow: 0 0 11px 1.5px #ed1d3b;
+  background-color:  #ed1d3b;
+  -webkit-box-shadow: 0 0 11px 1.5px  #ed1d3b;
+  -moz-box-shadow: 0 0 11px 1.5px  #ed1d3b;
+  box-shadow: 0 0 11px 1.5px  #ed1d3b;
 }
 
 .gaming {

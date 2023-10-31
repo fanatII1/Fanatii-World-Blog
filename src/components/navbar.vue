@@ -35,7 +35,7 @@ function searchArticleByVoice() {
     const articleName = transcript;
     // console.log(articleName, transcript)
     articlesStore.searchArticles(articleName);
-    microphone.value.style.color = '#ed1d3b';
+    microphone.value.style.color = ' #ed1d3b';
   };
 }
 
@@ -151,7 +151,7 @@ nav {
 }
 
 .nav-item.active a{
-  color: #ed1d3b;
+  color:  #ed1d3b;
 }
 
 .nav-item:hover {
@@ -186,7 +186,7 @@ input:focus{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ed1d3b;
+  background-color:  #ed1d3b;
   height: 100%;
   min-width: 35px;
 }
@@ -195,8 +195,8 @@ input:focus{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ed1d3b;
-  border: 1px solid #ed1d3b;
+  color:  #ed1d3b;
+  border: 1px solid  #ed1d3b;
   height: 100%;
   min-width: 35px;
 }
@@ -241,7 +241,7 @@ input:focus{
 }
 
 .mobile-nav-item.active a {
-  color: #ed1d3b;
+  color:  #ed1d3b;
 }
 
 .mobile-nav-item:hover {

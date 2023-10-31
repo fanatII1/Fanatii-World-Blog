@@ -166,13 +166,13 @@ function speakOutArticle(article){
   max-width: 65px;
   max-height: 65px;
   border-radius: 50%;
-  border: 1px solid #ed1d3b;
+  border: 1px solid  #ed1d3b;
   padding: 0.1%;
 }
 
 #author, #author:active {
   margin-left: 2.5%;
-  color: #ed1d3b;
+  color:  #ed1d3b;
   font-size: 1.15rem;
   width: 100%;
   display: block;
@@ -195,7 +195,7 @@ function speakOutArticle(article){
 }
 
 .fa-volume-high {
-  color: #ed1d3b;
+  color:  #ed1d3b;
   font-size: 2rem;
 }
 
@@ -215,7 +215,7 @@ function speakOutArticle(article){
 }
 
 #coffee-link, #coffee-link:active {
-  color: #ed1d3b;
+  color:  #ed1d3b;
 }
 
 @media screen and (max-width: 768px) {
@@ -254,7 +254,7 @@ function speakOutArticle(article){
   }
 
   .fa-volume-high {
-    color: #ed1d3b;
+    color:  #ed1d3b;
     font-size: 1.4rem;
   }
 

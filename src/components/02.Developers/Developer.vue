@@ -74,10 +74,10 @@ onBeforeMount(() => {
 }
 
 .developers {
-    background-color: #ed1d3b;
-    -webkit-box-shadow: 0 0 11px 1.5px #ed1d3b;
-    -moz-box-shadow: 0 0 11px 1.5px #ed1d3b;
-    box-shadow: 0 0 11px 1.5px #ed1d3b;
+    background-color:  #ed1d3b;
+    -webkit-box-shadow: 0 0 11px 1.5px  #ed1d3b;
+    -moz-box-shadow: 0 0 11px 1.5px  #ed1d3b;
+    box-shadow: 0 0 11px 1.5px  #ed1d3b;
 }
 
  
