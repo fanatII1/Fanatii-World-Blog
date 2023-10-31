@@ -157,7 +157,7 @@ function speakOutArticle(article){
   font-size: 1.2rem;
   font-weight: 600;
   align-items: center;
-  max-width: 1495px;
+  max-width: 990px;
 }
 
 .authorImg {
@@ -285,7 +285,7 @@ function speakOutArticle(article){
 
 /*STYLES FOR THE READ ARTICLES PAGE ARE DEFINED HERE BECAUSE THE RICH TEXT EDITOR OF THE CMS MUST HAVE ITS STYLES GLOBAL TO THE HTML PAGE*/
 .article-content {
-  max-width: 1550px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 

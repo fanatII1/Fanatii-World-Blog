@@ -73,8 +73,7 @@ body {
 }
 
 #app::-webkit-scrollbar {
-  width: 0.1px; .
-  git co
+  width: 0.1px;
   background-color: none;
 }
 
@@ -257,7 +256,7 @@ body {
 
 /*STYLES FOR THE READ ARTICLES PAGE ARE DEFINED HERE BECAUSE THE RICH TEXT EDITOR OF THE CMS MUST HAVE ITS STYLES GLOBAL TO THE HTML PAGE*/
 .article-content {
-  max-width: 1550px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
