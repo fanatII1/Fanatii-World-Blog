@@ -189,6 +189,7 @@ function speakOutArticle(article){
     height: 100%;
     margin: 0 auto;
     font-size: 1rem;
+    font-family: fantasy;
     color: #c3c3c3;
     text-align: left;
 }
