@@ -74,7 +74,7 @@ onBeforeMount(() => {
 }
 
 .socials a, .socials a:active {
-    color:  #ed1d3b;
+    color:  rgb(255, 0, 189);
     cursor: pointer;
     transition: .4s;
     margin-right: 3%;

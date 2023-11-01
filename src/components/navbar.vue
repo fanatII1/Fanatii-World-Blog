@@ -1,5 +1,5 @@
 <script setup>
-import logo from '../assets/logo-2.png';
+import logo from '../assets/logo.png';
 import { ref, watch, computed } from 'vue';
 import { useArticlesStore } from '../stores/articles';
 
@@ -35,7 +35,7 @@ function searchArticleByVoice() {
     const articleName = transcript;
     // console.log(articleName, transcript)
     articlesStore.searchArticles(articleName);
-    microphone.value.style.color = ' #ed1d3b';
+    microphone.value.style.color = ' rgb(255, 0, 189)';
   };
 }
 
@@ -103,7 +103,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #242526;
+  background-color: #000;
   color: #fff;
   z-index: 5;
   overflow: hidden;
@@ -151,7 +151,7 @@ nav {
 }
 
 .nav-item.active a{
-  color:  #ed1d3b;
+  color:  rgb(255, 0, 189);
 }
 
 .nav-item:hover {
@@ -171,7 +171,7 @@ input:focus{
 
 .search{
   border: none;
-  background: #515151;
+  background: #2f2f2f;
   padding: 2%;
   color: #fff;
   font-weight: 600;
@@ -186,7 +186,7 @@ input:focus{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:  #ed1d3b;
+  background-color:  rgb(255, 0, 189);
   height: 100%;
   min-width: 35px;
 }
@@ -195,8 +195,8 @@ input:focus{
   display: flex;
   justify-content: center;
   align-items: center;
-  color:  #ed1d3b;
-  border: 1px solid  #ed1d3b;
+  color:  rgb(255, 0, 189);
+  border: 1px solid  rgb(255, 0, 189);
   height: 100%;
   min-width: 35px;
 }
@@ -211,7 +211,7 @@ input:focus{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #242526;
+  background-color: #000;
   animation: slideMobileNav .4s;
 }
 
@@ -241,7 +241,7 @@ input:focus{
 }
 
 .mobile-nav-item.active a {
-  color:  #ed1d3b;
+  color:  rgb(255, 0, 189);
 }
 
 .mobile-nav-item:hover {

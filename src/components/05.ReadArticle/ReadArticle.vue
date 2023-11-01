@@ -97,7 +97,6 @@ function speakOutArticle(article){
             <img :src="articleInfo.authorImg" alt="" class="authorImg">
             <div class="author-description">
               <RouterLink id="author" to="/author">By: {{ articleInfo.author }}</RouterLink>
-              <br>
               <p>web developer, gamer and tech advocate</p>
             </div>
        </div>
@@ -166,13 +165,13 @@ function speakOutArticle(article){
   max-width: 65px;
   max-height: 65px;
   border-radius: 50%;
-  border: 1px solid  #ed1d3b;
+  border: 1px solid  rgb(255, 0, 189);
   padding: 0.1%;
 }
 
 #author, #author:active {
   margin-left: 2.5%;
-  color:  #ed1d3b;
+  color:  rgb(255, 0, 189);
   font-size: 1.15rem;
   width: 100%;
   display: block;
@@ -189,18 +188,18 @@ function speakOutArticle(article){
     width: 85%;
     height: 100%;
     margin: 0 auto;
-    font-size: 1.06rem;
+    font-size: 1rem;
     color: #c3c3c3;
     text-align: left;
 }
 
 .fa-volume-high {
-  color:  #ed1d3b;
+  color:  rgb(255, 0, 189);
   font-size: 2rem;
 }
 
 #buymeacoffee {
-  border-radius: 40px;
+  border-radius: 10px;
   width: 75%;
   height: 7%;
   background: #242526;
@@ -208,14 +207,15 @@ function speakOutArticle(article){
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 500;
   max-width: 1000px;
   margin-top: 2%;
+  color: #fff;
 }
 
 #coffee-link, #coffee-link:active {
-  color:  #ed1d3b;
+  color:  rgb(255, 0, 189);
 }
 
 @media screen and (max-width: 768px) {
@@ -244,23 +244,35 @@ function speakOutArticle(article){
   }
 }
 
+@media screen and (max-width: 638px) {
+  .article-content {
+    font-size: 0.9rem;
+  }
+
+  #buymeacoffee[data-v-fe4562ad] {
+    padding: 5%;
+    font-size: 0.7rem;
+    width: 85%;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   #author-wrapper {
     margin: 8% auto;
   }
 
   #article-content {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .fa-volume-high {
-    color:  #ed1d3b;
+    color:  rgb(255, 0, 189);
     font-size: 1.4rem;
   }
 
   #buymeacoffee {
     padding: 5%;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 

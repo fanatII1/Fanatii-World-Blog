@@ -218,7 +218,7 @@ onMounted(async () => {
     top: 0;
     width: 100%;
     height: 100%;
-    background:  #ed1d3b;
+    background:  rgb(255, 0, 189);
     background: -webkit-linear-gradient(181deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 60%, rgb(255 0 189));
     background: linear-gradient(181deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 60%, rgb(255 0 189));
     z-index: 2;
@@ -275,12 +275,6 @@ onMounted(async () => {
     flex-direction: column;
 }
 
-.heading-underline {
-    height: 5px;
-    width: 15%;
-    background-color:  #ed1d3b;
-}
-
 .all-new-articles {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 280px));
@@ -303,37 +297,6 @@ onMounted(async () => {
     border-radius: 2px;
 }
 
-.new-article{
-    height: 100%;
-    background-color: #0f1010;
-    color: #fff;
-    border: 1px solid  #ed1d3b;
-    -webkit-box-shadow: 0 0 11px 1.5px  #ed1d3b;
-    -moz-box-shadow: 0 0 11px 1.5px  #ed1d3b;
-    box-shadow: 0 0 11px 1.5px  #ed1d3b;
-    cursor: pointer;
-    transition: .4s;
-}
-
-.new-article:hover {
-    transform: scale(1.04);
-}
-
-.latest-article-img{
-    display: block;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    margin-bottom: 5%;
-}
-
-.new-article-title, .date, .category {
-    padding-left: 3%;
-    line-height: 2.5;
-    font-size: 1.05rem;
-    font-weight: 600;
-}
-
 .category {
     padding-left: 0;
     display: inline;
@@ -352,10 +315,10 @@ onMounted(async () => {
 }
 
 .developers {
-    background-color:  #ed1d3b;
-    -webkit-box-shadow: 0 0 11px 1.5px  #ed1d3b;
-    -moz-box-shadow: 0 0 11px 1.5px  #ed1d3b;
-    box-shadow: 0 0 11px 1.5px  #ed1d3b;
+    background-color:  rgb(255, 0, 189);
+    -webkit-box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
+    -moz-box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
+    box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
 }
 
 .gaming {
@@ -420,10 +383,10 @@ onMounted(async () => {
     padding: 5%;
     color: #fff;
     font-weight: 600;
-    border: 1px solid  #ed1d3b;
-    -webkit-box-shadow: 0 0 11px 1.5px  #ed1d3b;
-    -moz-box-shadow: 0 0 11px 1.5px  #ed1d3b;
-    box-shadow: 0 0 11px 1.5px  #ed1d3b;
+    border: 1px solid  rgb(255, 0, 189);
+    -webkit-box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
+    -moz-box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
+    box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
     cursor: pointer;
     transition: .4s;
     height: 10%;
@@ -443,7 +406,7 @@ onMounted(async () => {
     left: 0;
     top: 0;
     height: 100%;
-    background:  #ed1d3b;
+    background:  rgb(255, 0, 189);
     z-index: 2;
 }
 

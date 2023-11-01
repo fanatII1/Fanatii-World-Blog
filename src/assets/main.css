@@ -124,7 +124,7 @@ body {
 .heading-underline {
   height: 5px;
   width: 15%;
-  background-color:  #ed1d3b;
+  background-color:  rgb(255, 0, 189);
 }
 
 
@@ -191,10 +191,10 @@ body {
   justify-content: space-between;
   background-color: #0f1010;
   color: #fff;
-  border: 1px solid  #ed1d3b;
-  -webkit-box-shadow: 0 0 11px 1.5px  #ed1d3b;
-  -moz-box-shadow: 0 0 11px 1.5px  #ed1d3b;
-  box-shadow: 0 0 11px 1.5px  #ed1d3b;
+  border: 1px solid  rgb(255, 0, 189);
+  -webkit-box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
+  -moz-box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
+  box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
   cursor: pointer;
   overflow: hidden;
   transition: .4s;
@@ -213,9 +213,17 @@ body {
   margin-bottom: 5%;
 }
 
+.latest-article-img{
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 5%;
+}
+
 .new-article-title, .date, .category {
   padding-left: 3%;
-  line-height: 2.35;
+  line-height: 2.5;
   font-size: 1.05rem;
   font-weight: 600;
 }
@@ -234,10 +242,10 @@ body {
 
 
 .developers {
-  background-color:  #ed1d3b;
-  -webkit-box-shadow: 0 0 11px 1.5px  #ed1d3b;
-  -moz-box-shadow: 0 0 11px 1.5px  #ed1d3b;
-  box-shadow: 0 0 11px 1.5px  #ed1d3b;
+  background-color:  rgb(255, 0, 189);
+  -webkit-box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
+  -moz-box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
+  box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
 }
 
 .gaming {
