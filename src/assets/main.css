@@ -249,10 +249,10 @@ body {
 
 
 .developers {
-  background-color:  rgb(255, 0, 189);
-  -webkit-box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
-  -moz-box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
-  box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
+  background-color:  #ed1d3b;
+  -webkit-box-shadow: 0 0 11px 1.5px  #ed1d3b;
+  -moz-box-shadow: 0 0 11px 1.5px  #ed1d3b;
+  box-shadow: 0 0 11px 1.5px  #ed1d3b;
 }
 
 .gaming {
@@ -276,8 +276,26 @@ body {
 }
 
 
-.rtc-paragraph {
+.rtc-paragraph-inline {
   margin: 1% 0;
+  font-weight: bold;
+}
+
+.rtc-paragraph-block {
+  margin: 1% 0;
+}
+
+ol li .rtc-paragraph-block {
+  font-weight: bold;
+}
+
+.rtc-paragraph-span {
+  font-weight: normal;
+}
+
+/*rtc 1 - 5 are classes for .rtc-paragraph elements that will be made inline. the 1,2,3,4,5 is from the index of the class --this is all done by the rtc renderer of the cms*/
+.rtc-1, .rtc-3, .rtc-5, .rtc-7 {
+  display: inline;
 }
 
 .article-content ol li .rtc-paragraph {

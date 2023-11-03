@@ -315,7 +315,7 @@ onMounted(async () => {
 }
 
 .developers {
-    background-color:  rgb(255, 0, 189);
+    background-color:  #ed1d3b;
     -webkit-box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
     -moz-box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
     box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);

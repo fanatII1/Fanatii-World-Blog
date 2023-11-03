@@ -14,6 +14,16 @@ const article = articleInfo.article;
 
 //object that defines the options of how the rich text editor content from the CMS renders
 const renderOptions = {
+    preserveWhiteSpace: true,
+    renderMark: {
+      [MARKS.UNDERLINE]: (text)=>{
+        // console.log('hi', text)
+        return `<u>${text}</u>`
+      },
+      [MARKS.BOLD]: (text)=>{
+        return `<b>${text}</b>`
+      }
+    },
     renderNode:{
       [BLOCKS.EMBEDDED_ASSET] : (node, children)=>{
         // console.log(node.node.data.target.sys.id)
@@ -25,12 +35,21 @@ const renderOptions = {
         return `<div class='rtc-img-wrapper'><img src=${img} alt='rtc-img' class='rtc-img'/></div>`
       },
       [BLOCKS.PARAGRAPH]: (node, children)=>{
-        return `<p class='rtc-paragraph'>${node.content[0].value}</p>`
+        if(node.content.length > 1) {
+          // console.log(node.content[0])
+          return `
+          <p class='rtc-paragraph-inline'>
+            ${node.content[0].value} <br/>
+            <span class="rtc-paragraph-span">${typeof node.content[1].value === 'undefined' ? '' : node.content[1].value}</span>
+          </p>`
+        }
+        return `<p class='rtc-paragraph-block'>${node.content[0].value}</p>`
       },
       [BLOCKS.HEADING_1]: (node,children)=>{
         return `<h1 class='rtc-heading-1'>${node.content[0].value}</h1>`
       },
       [BLOCKS.HEADING_2]: (node,children)=>{
+        // console.log(node.content[0].value)
         return `<h2 class='rtc-heading-2'>${node.content[0].value}</h2>`
       },
       [BLOCKS.HEADING_3]: (node,children)=>{
@@ -46,8 +65,9 @@ const renderOptions = {
         return `<h6 class='rtc-heading-6'>${node.content[0].value}</h6>`
       },
       [BLOCKS.UL_LIST] : (node, children)=>{
-        console.log(node.content[0].content[0].content[0].value)
+        // console.log(node.content[0].content[0].content[0].value)
         let listItem = node.content[0].content[0].content[0].value;
+        console.log(listItem)
         return(
 `          <ul class='rtc-list' style="list-style: none; margin: 0.5% 0 0.5% 2%;">
             <li>${listItem}<li/>
@@ -58,7 +78,8 @@ const renderOptions = {
         
         return `<a href=${node.data.url} target='_blank' rel='noopener noreferrer'>${node.content[0].value}</a>`
       },
-      [MARKS.UNDERLINE]: (node, children)=>{
+      [MARKS.CODE]: (node, children)=>{
+        console.log('hi')
         return `<u></u>`
       }
     }
@@ -189,7 +210,7 @@ function speakOutArticle(article){
     height: 100%;
     margin: 0 auto;
     font-size: 1rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #c3c3c3;
     text-align: left;
 }
