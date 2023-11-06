@@ -12,12 +12,63 @@ const articleId = Number(route.params.id);
 const articleInfo = articlesStore.fetchArticle(articleId);
 const article = articleInfo.article;
 
+function listItemElementCreator(list, value) {
+  if(typeof value.marks[0] === 'undefined') {
+    const li = document.createElement("li");
+    li.className = 'sub-list-item';
+    li.textContent = value.value;
+    list.appendChild(li);
+    // console.log(inlineUL)
+    return list
+  } else {
+    const li = document.createElement("li");
+    li.style.fontWeight = 'bold';
+    li.classList = 'main-list-item';
+    li.textContent = value.value;
+    list.appendChild(li);
+    // console.log(inlineUL)
+    return list
+  }
+}
+
+function ListItemCreator(listType, listItems) {
+  const list = document.createElement(listType);
+  listItems.forEach((listItem) => {
+    let listItemValues = listItem.content;
+    //for each value we are going to return a <li>
+      listItemValues.forEach((value) => {
+        let listItemContent = value.content;
+        if(value.nodeType === 'paragraph') {
+          listItemContent.forEach((item) => {
+            listItemElementCreator(list, item);
+          }) 
+        }
+        else if(value.nodeType === 'unordered-list') {
+          const inlineUL = document.createElement("ul");
+          let inlineListItems = listItemContent;
+          inlineListItems.forEach((inlineItem) => {
+            let itemContent = inlineItem.content;
+            itemContent.forEach((itemValue) => {
+              itemValue.content.forEach((value) => {
+                let inlineList = listItemElementCreator(inlineUL, value);
+                list.appendChild(inlineList)
+              })
+            })
+          })
+        }
+        else {
+          console.log('')
+        }
+      })
+  })
+  return list
+}
+
 //object that defines the options of how the rich text editor content from the CMS renders
 const renderOptions = {
     preserveWhiteSpace: true,
     renderMark: {
       [MARKS.UNDERLINE]: (text)=>{
-        // console.log('hi', text)
         return `<u>${text}</u>`
       },
       [MARKS.BOLD]: (text)=>{
@@ -31,25 +82,24 @@ const renderOptions = {
         const assets = articleInfo.assets;
         const imgInfo = assets.find(asset => asset.sys.id === node.data.target.sys.id );
         const img = imgInfo.fields.file.url;
-        // console.log(img)
+
         return `<div class='rtc-img-wrapper'><img src=${img} alt='rtc-img' class='rtc-img'/></div>`
       },
       [BLOCKS.PARAGRAPH]: (node, children)=>{
         if(node.content.length > 1) {
-          // console.log(node.content[0])
           return `
           <p class='rtc-paragraph-inline'>
             ${node.content[0].value} <br/>
             <span class="rtc-paragraph-span">${typeof node.content[1].value === 'undefined' ? '' : node.content[1].value}</span>
           </p>`
         }
+
         return `<p class='rtc-paragraph-block'>${node.content[0].value}</p>`
       },
       [BLOCKS.HEADING_1]: (node,children)=>{
         return `<h1 class='rtc-heading-1'>${node.content[0].value}</h1>`
       },
       [BLOCKS.HEADING_2]: (node,children)=>{
-        // console.log(node.content[0].value)
         return `<h2 class='rtc-heading-2'>${node.content[0].value}</h2>`
       },
       [BLOCKS.HEADING_3]: (node,children)=>{
@@ -65,14 +115,16 @@ const renderOptions = {
         return `<h6 class='rtc-heading-6'>${node.content[0].value}</h6>`
       },
       [BLOCKS.UL_LIST] : (node, children)=>{
-        // console.log(node.content[0].content[0].content[0].value)
-        let listItem = node.content[0].content[0].content[0].value;
-        console.log(listItem)
-        return(
-`          <ul class='rtc-list' style="list-style: none; margin: 0.5% 0 0.5% 2%;">
-            <li>${listItem}<li/>
-          </ul>`
-        )
+        let listItems = node.content;
+        let list = ListItemCreator('ul', listItems)
+        // return the created html as a string to mend in the document(HTML
+        // done this because the documentToHtmlString() renders the text editor content from CMS via a string
+        return list.outerHTML
+      },
+      [BLOCKS.OL_LIST] : (node, children)=>{
+        let listItems = node.content;
+        let list = ListItemCreator('ol', listItems)
+        return list.outerHTML
       },
       [INLINES.HYPERLINK]: (node, children) => {
         

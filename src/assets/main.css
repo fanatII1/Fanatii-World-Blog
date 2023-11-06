@@ -289,6 +289,14 @@ ol li .rtc-paragraph-block {
   font-weight: bold;
 }
 
+ol li, ul li {
+  margin: 1.4% 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
 .rtc-paragraph-span {
   font-weight: normal;
 }
@@ -329,4 +337,9 @@ ol li .rtc-paragraph-block {
   .rtc-img-wrapper {
     max-height: 360px;
   }
+}
+
+.sub-list-item {
+  list-style-type: none;
+  margin-left: 1.5%;
 }

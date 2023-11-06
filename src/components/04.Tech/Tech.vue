@@ -27,7 +27,7 @@ onBeforeMount(() => {
   <main id="developer-wrapper">
 
     <div id="heading-wrapper">
-       <h2 id="new-articles-heading">Developer Articles</h2>
+       <h2 id="new-articles-heading">Tech Articles</h2>
        <div class="heading-underline"></div>
     </div>
 
