@@ -12,7 +12,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-    <main id="author-wrapper">]
+    <main id="author-wrapper">
         <div class="author-content">
             <img :src="authorImage" alt="" id="author-img">
             <p class="description">
@@ -89,7 +89,7 @@ onBeforeMount(() => {
 }
 
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   #author-wrapper {
     margin: 6% auto;
   }

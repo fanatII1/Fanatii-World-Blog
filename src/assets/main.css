@@ -375,6 +375,10 @@ ul {
     margin: 1% 0;
     font-size: 0.9rem !important;
   }
+
+  .author-content {
+    width: 75%;
+  }
 }
 
 .sub-list-item {
@@ -397,7 +401,6 @@ ul {
 @media screen and (max-width: 375px) {
   .author-content {
     font-size: 0.7rem;
-    width: 100%;
   }
   #buymecoffee {
     font-size: 0.435rem !important;
