@@ -397,7 +397,7 @@ ul {
 @media screen and (max-width: 375px) {
   .author-content {
     font-size: 0.7rem;
-    width: 90%;
+    width: 100%;
   }
   #buymecoffee {
     font-size: 0.435rem !important;
