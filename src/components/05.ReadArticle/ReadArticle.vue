@@ -355,6 +355,14 @@ function speakOutArticle(article){
     font-size: 0.7rem;
     width: 85%;
   }
+
+  .rtc-paragraph-inline {
+    margin: 5% 0;
+  }
+
+  .rtc-heading-2 {
+    margin-top: 12%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
