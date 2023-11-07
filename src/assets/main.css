@@ -381,7 +381,7 @@ ul {
   }
 
   .article-content ol {
-    font-size: 0.9rem !important;
+    font-size: 0.75rem !important;
   }
 
   .author-content {
@@ -399,13 +399,6 @@ ul {
   .rtc-paragraph-inline {
     margin: 1% 0;
     font-size: 0.75rem !important;
-  }
-}
-
-
-@media screen and (max-width: 375px) {
-  #buymecoffee {
-    font-size: 0.435rem !important;
   }
 }
 
