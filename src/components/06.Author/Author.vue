@@ -107,4 +107,10 @@ onBeforeMount(() => {
     font-size: 1.2rem;
   }
 }
+
+@media screen and (max-width: 425px) {  
+  #buymeacoffee {
+    font-size: 0.5rem !important;
+  }
+}
 </style>

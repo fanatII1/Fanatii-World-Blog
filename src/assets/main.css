@@ -366,6 +366,10 @@ ul {
   margin: 2.5% 0;
 }
 
+.article-content ol {
+  list-style-type: circle;
+}
+
 @media screen and (max-width: 425px) {
   .rtc-img-wrapper {
     max-height: 360px;
@@ -373,6 +377,10 @@ ul {
 
   .rtc-paragraph-inline {
     margin: 1% 0;
+    font-size: 0.9rem !important;
+  }
+
+  .article-content ol {
     font-size: 0.9rem !important;
   }
 
@@ -391,10 +399,6 @@ ul {
   .rtc-paragraph-inline {
     margin: 1% 0;
     font-size: 0.75rem !important;
-  }
-
-  #buymecoffee {
-    font-size: 0.5rem !important;
   }
 }
 
