@@ -393,6 +393,13 @@ ul {
   }
 }
 
+
+@media screen and (max-width: 200px) {
+  #buymecoffee {
+    font-size: 0.435rem !important;
+  }
+}
+
 @media screen and (min-width:426px) and (max-width: 435px) {
   .rtc-paragraph-inline {
     margin: 1% 0;
