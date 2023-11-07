@@ -206,6 +206,18 @@ a:active {
   .rtc-img-wrapper {
     margin: 0 !important;
   }
+
+  #new-articles-heading-read {
+    font-size: 1.2rem;
+  }
+
+  #author {
+    font-size: 0.9rem !important;
+  }
+
+  .author-description {
+    font-size: 0.75rem !important;
+  }
 }
 
 .new-article{

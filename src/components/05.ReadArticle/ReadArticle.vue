@@ -272,7 +272,7 @@ function speakOutArticle(article){
 #author, #author:active {
   margin-left: 2.5%;
   color:  rgb(255, 0, 189);
-  font-size: 1.15rem;
+  font-size: 0.9rem;
   width: 100%;
   display: block;
 }
@@ -282,6 +282,7 @@ function speakOutArticle(article){
   font-size: 0.9rem;
   color: gray;
   font-style: italic;
+  font-weight: 300;
 }
 
 #article-content {
