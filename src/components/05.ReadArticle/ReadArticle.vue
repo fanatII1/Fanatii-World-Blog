@@ -86,15 +86,39 @@ const renderOptions = {
         return `<div class='rtc-img-wrapper'><img src=${img} alt='rtc-img' class='rtc-img'/></div>`
       },
       [BLOCKS.PARAGRAPH]: (node, children)=>{
-        if(node.content.length > 1) {
-          return `
-          <p class='rtc-paragraph-inline'>
-            ${node.content[0].value} <br/>
-            <span class="rtc-paragraph-span">${typeof node.content[1].value === 'undefined' ? '' : node.content[1].value}</span>
-          </p>`
-        }
+        // console.log(node.content)
+        const div =  document.createElement('div');
+        div.className = 'rtc-paragraph-inline';
+        node.content.forEach((value, index) => {
+          // value.value being undefined means that the node content(paragraph data) is a hyperlink
+          if(typeof value.value === 'undefined') {
+            // console.log(value)
+            const link = document.createElement('a');
+            link.setAttribute('href', value.data.uri);
+            link.textContent = value.content[0].value;
+            link.style.color = '#ff00bd';
+            console.log(div.lastChild)
+            let currentTextForLink = div.lastChild;
+            currentTextForLink.appendChild(link)
+            // div.appendChild(link)
+          }
+          else {
+            const paragraph = document.createElement('p');
+            paragraph.textContent = value.value;
+            paragraph.style.fontWeight = typeof value.marks[0] === 'undefined' ? '' : 'bold';
 
-        return `<p class='rtc-paragraph-block'>${node.content[0].value}</p>`
+            if(typeof value.marks[0] === 'undefined'){
+              paragraph.style.marginTop = '1.5%';
+            }
+            else {
+              paragraph.style.marginTop = '0.5%';
+            }
+
+            div.appendChild(paragraph)
+          }
+        })
+
+        return div.outerHTML
       },
       [BLOCKS.HEADING_1]: (node,children)=>{
         return `<h1 class='rtc-heading-1'>${node.content[0].value}</h1>`
@@ -126,13 +150,16 @@ const renderOptions = {
         let list = ListItemCreator('ol', listItems)
         return list.outerHTML
       },
-      [INLINES.HYPERLINK]: (node, children) => {
-        
-        return `<a href=${node.data.url} target='_blank' rel='noopener noreferrer'>${node.content[0].value}</a>`
+      [INLINES.HYPERLINK]: ({ data }, children) => {
+        return 
+        `<a
+        href={data.uri}
+        target={${data.uri.startsWith(website_url) ? '_self' : '_blank'}}
+        >{children}</a>`
       },
-      [MARKS.CODE]: (node, children)=>{
+      [MARKS.BOLD]: (node, children)=>{
         console.log('hi')
-        return `<u></u>`
+        return `<b></b>`
       }
     }
 }
@@ -320,7 +347,7 @@ function speakOutArticle(article){
 
 @media screen and (max-width: 638px) {
   .article-content {
-    font-size: 0.9rem;
+    font-size: 1.065rem;
   }
 
   #buymeacoffee[data-v-fe4562ad] {

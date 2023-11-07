@@ -73,6 +73,10 @@ body {
   font-family: Roboto,sans-serif;
 }
 
+a:active {
+  color: #ff00bd;
+}
+
 #app{
   height: 100%;
   background-color: #000;
@@ -278,7 +282,7 @@ body {
 
 .rtc-paragraph-inline {
   margin: 1% 0;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .rtc-paragraph-block {
