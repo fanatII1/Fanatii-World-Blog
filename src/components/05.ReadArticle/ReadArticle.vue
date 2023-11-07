@@ -210,8 +210,9 @@ function speakOutArticle(article){
     
     <footer id="buymeacoffee">
         <p>
-          I'm brewing up special content and insights, just for you & I would appreciate your support in 
-          <a href="https://www.buymeacoffee.com/fanatiiworld" id="coffee-link"><b>buying me a coffee.☕</b></a>
+          Creating exclusive content just for you. Your
+          <a href="https://www.buymeacoffee.com/fanatiiworld" id="coffee-link"><b>coffee support</b></a>
+          is much appreciated.☕
         </p>
     </footer>
 </template>
@@ -337,8 +338,8 @@ function speakOutArticle(article){
   
   #buymeacoffee[data-v-fe4562ad] {
     padding: 5%;
-    font-size: 0.6rem;
-    width: 85%;
+    font-size: 0.5rem;
+    width: 90%;
   }
 
   .rtc-img-wrapper {
