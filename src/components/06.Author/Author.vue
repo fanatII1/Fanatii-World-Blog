@@ -95,7 +95,6 @@ onBeforeMount(() => {
   }
 
   .author-content[data-v-ecb04a28] {
-    width: 75%;
     height: 50%;
     margin: 0 auto;
     font-size: 1rem;

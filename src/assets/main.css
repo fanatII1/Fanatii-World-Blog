@@ -377,7 +377,8 @@ ul {
   }
 
   .author-content {
-    width: 75%;
+    width: 75% !important;
+    font-size: 0.7rem !important;
   }
 }
 
@@ -399,9 +400,6 @@ ul {
 
 
 @media screen and (max-width: 375px) {
-  .author-content {
-    font-size: 0.7rem;
-  }
   #buymecoffee {
     font-size: 0.435rem !important;
   }
