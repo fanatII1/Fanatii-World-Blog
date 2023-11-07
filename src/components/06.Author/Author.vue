@@ -89,7 +89,7 @@ onBeforeMount(() => {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #author-wrapper {
     margin: 6% auto;
   }

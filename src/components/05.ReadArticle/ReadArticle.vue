@@ -108,7 +108,7 @@ const renderOptions = {
             paragraph.style.fontWeight = typeof value.marks[0] === 'undefined' ? '' : 'bold';
 
             if(typeof value.marks[0] === 'undefined'){
-              paragraph.style.marginTop = '1.5%';
+              paragraph.style.marginBottom = '1.5%';
             }
             else {
               paragraph.style.marginTop = '0.5%';
@@ -320,7 +320,7 @@ function speakOutArticle(article){
   color:  rgb(255, 0, 189);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #author-wrapper {
     margin: 6% auto;
   }
@@ -337,7 +337,7 @@ function speakOutArticle(article){
   
   #buymeacoffee[data-v-fe4562ad] {
     padding: 5%;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     width: 85%;
   }
 
@@ -353,7 +353,7 @@ function speakOutArticle(article){
 
   #buymeacoffee[data-v-fe4562ad] {
     padding: 5%;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     width: 85%;
   }
 
@@ -393,7 +393,7 @@ function speakOutArticle(article){
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .rtc-paragraph {
     margin: 5% 0 !important;
   }
@@ -419,7 +419,6 @@ function speakOutArticle(article){
   height: 750px;
   max-height: 525px;
   width: 95%;
-  margin: 2% auto;
 }
 
 .rtc-img{
