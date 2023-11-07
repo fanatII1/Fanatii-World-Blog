@@ -382,10 +382,14 @@ ul {
   margin-left: 1.5%;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 335px) {
   .rtc-paragraph-inline {
     margin: 1% 0;
     font-size: 0.75rem !important;
+  }
+
+  #buymecoffee {
+    font-size: 0.5rem !important;
   }
 }
 
