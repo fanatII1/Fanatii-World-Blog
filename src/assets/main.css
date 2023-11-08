@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Maldini';
-  src: url('/fonts/Vermin\ Vibes\ 1989.ttf') format('truetype');
+  src: url('./fonts/Vermin.ttf') format('truetype');
 } 
 
 /* @font-face {
