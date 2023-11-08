@@ -12,7 +12,7 @@ const blogPoll = ref([])
 const selectedAnswer = ref(null);
 const selectedPoll = ref(null);
 const latestFourArticles = ref([]);
-let categoryVotes = ref(0)
+let pollAnswerPercentage = ref(0)
 
 const displayedArticles = computed(() => {
   return articlesStore.searchedArticles.length > 0
@@ -20,19 +20,29 @@ const displayedArticles = computed(() => {
     : articlesStore.articles;
 });
 
-function voteCountPercentage(updatedEntry, selectedCategory){
-    console.log(selectedCategory)
+//get total number of votes of a specific (poll/entry)
+function voteCountPercentage(updatedEntry, selectedCategory, answerIndex){
+    // console.log(selectedCategory)
     let votes = 0;
     if(selectedCategory === 'developers') {
+        // console.log(updatedEntry.Developers.options[answerIndex].votes)
+        let answerVote = updatedEntry.Developers.options[answerIndex].votes
         updatedEntry.Developers.options.forEach(entry => votes += entry.votes)
+        // console.log((answerVote * 100) / votes)
+        pollAnswerPercentage.value = (answerVote * 100) / votes;
     }
     else if(selectedCategory === 'gaming') {
+        let answerVote = updatedEntry.Gaming.options[answerIndex].votes
         updatedEntry.Gaming.options.forEach(entry => votes += entry.votes)
+        // console.log((answerVote * 100) / votes)
+        pollAnswerPercentage.value = (answerVote * 100) / votes;
     }
     else {
+        let answerVote = updatedEntry.Tech.options[answerIndex].votes
         updatedEntry.Tech.options.forEach(entry => votes += entry.votes)
+        // console.log((answerVote * 100) / votes)
+        pollAnswerPercentage.value = (answerVote * 100) / votes;
     }
-    categoryVotes.value = votes;
 }
 
 //here we update the votes of a selected answer by:
@@ -44,41 +54,63 @@ function selectAnswer(answerID, answerIndex, pollID, question, answer, poll) {
   selectedAnswer.value = answerID;
   selectedPoll.value = pollID;
   let selectedCategory;
+  let votingStatuses = JSON.parse(localStorage.getItem('votingStatuses'));
+  const pollCategoryStatus = votingStatuses.find((poll) => poll.id === pollID);
+  console.log(pollCategoryStatus)
 
-  //we get the selected topic by using the object answer ...in array
-  client.getSpace(spaceID)
- .then((space) => space.getEnvironment('master'))
-  .then((environment) => environment.getEntry(environmentID))
-  .then((entry) => {
-    let pollEntry = entry.fields.poll['en-US'];
-    let pollEntryCategoryToUpdate = pollEntry.Developers.question === poll.question ? pollEntry.Developers : pollEntry.Gaming.question === poll.question ? pollEntry.Gaming : pollEntry.Tech;
-    let selectedPollEntryToUpdate = pollEntryCategoryToUpdate.options[answerIndex];
-    selectedPollEntryToUpdate.votes = selectedPollEntryToUpdate.votes + 1;
+  if (pollCategoryStatus && !pollCategoryStatus.votingStatus) {
+    //we get the selected topic by using the object answer ...in array
+    client.getSpace(spaceID)
+    .then((space) => space.getEnvironment('master'))
+    .then((environment) => environment.getEntry(environmentID))
+    .then((entry) => {
+      let pollEntry = entry.fields.poll['en-US'];
+      let pollEntryCategoryToUpdate = pollEntry.Developers.question === poll.question ? pollEntry.Developers : pollEntry.Gaming.question === poll.question ? pollEntry.Gaming : pollEntry.Tech;
+      let selectedPollEntryToUpdate = pollEntryCategoryToUpdate.options[answerIndex];
+      selectedPollEntryToUpdate.votes = selectedPollEntryToUpdate.votes + 1;
+  
+      if(pollEntry.Developers.question === pollEntryCategoryToUpdate.question){
+          // console.log('developers')
+          // console.log(entry.fields.poll['en-US'])
+          selectedCategory = 'developers';
+          entry.fields.poll['en-US'].Developers.options[answerIndex] = selectedPollEntryToUpdate;
+      } else if (pollEntry.Gaming.question === pollEntryCategoryToUpdate.question) {
+          selectedCategory = 'gaming';
+          entry.fields.poll['en-US'].Gaming.options[answerIndex] = selectedPollEntryToUpdate;
+      } else {
+          selectedCategory = 'tech';
+          entry.fields.poll['en-US'].Tech.options[answerIndex] = selectedPollEntryToUpdate;
+      }
 
-    if(pollEntry.Developers.question === pollEntryCategoryToUpdate.question){
-        // console.log('developers')
-        // console.log(entry.fields.poll['en-US'])
-        selectedCategory = 'developers';
-        entry.fields.poll['en-US'].Developers.options[answerIndex] = selectedPollEntryToUpdate;
-    } else if (pollEntry.Gaming.question === pollEntryCategoryToUpdate.question) {
-        selectedCategory = 'gaming';
-        entry.fields.poll['en-US'].Gaming.options[answerIndex] = selectedPollEntryToUpdate;
+      return entry.update()
+    })
+   .then((entry) => {
+     entry.publish();
+     // console.log(`Entry updated.`, entry, answerIndex)
+     const updatedEntry = entry.fields.poll['en-US'];
+     voteCountPercentage(updatedEntry, selectedCategory, answerIndex)
+   })
+
+    //if didnt vote, set to true & perform the voting action here 
+    votingStatuses.forEach((pollCategory,index) => {
+        if(pollCategory.id === pollID) {
+              pollCategory.votingStatus = true;
+          }
+        })
+      localStorage.setItem('votingStatuses', JSON.stringify(votingStatuses))
+    } else if (pollCategoryStatus && pollCategoryStatus.votingStatus) {
+      // Person has already voted for this party, handle accordingly
+      alert('You have already voted.');
+      pollAnswerPercentage.value = 0;
+      return
     } else {
-        selectedCategory = 'tech';
-        entry.fields.poll['en-US'].Tech.options[answerIndex] = selectedPollEntryToUpdate;
+      // Handle the case when the party does not exist
+      alert('Invalid category name');
+      pollAnswerPercentage.value = 0;
+      return
     }
-
-    return entry.update()
-  })
-  .then((entry) => {
-    entry.publish();
-    console.log(`Entry ${entry.sys.id} updated.`)
-    console.log(entry)
-    const updatedEntry = entry.fields.poll['en-US'];
-    voteCountPercentage(updatedEntry, selectedCategory)
-  })
-
 }
+
 
 function fetchArticle(id) {
     router.push(`/read-article/${id}`)
@@ -93,8 +125,34 @@ onMounted(async () => {
     const art = await articlesStore.fetchAllArticles();
     const pollQuestions = articlesStore.pollQuestions.poll;
     const { Developers, Gaming, Tech } = pollQuestions;
-
     const poll = [Developers, Gaming, Tech];
+    let votingStatuses = JSON.parse(localStorage.getItem('votingStatuses')); 
+    
+    //we check if a poll exists, if not we create one
+    //if a poll exist, we check if old one is same as new one
+    //if the old one is same as new one, check if person voted.
+    //if person voted, set their vote status to true, if not false
+    if (votingStatuses) {
+        poll.forEach((pollCategory, index) => {
+            if (index < votingStatuses.length) {
+                const existingPoll = votingStatuses[index].question;
+                const newPoll = pollCategory.question;
+                
+                if (existingPoll === newPoll && existingPoll.voted) {
+                    votingStatuses[index].votingStatus = true;
+                    // console.log('voted', votingStatuses)
+                    localStorage.setItem('votingStatuses', JSON.stringify(votingStatuses))
+                } else {
+                    votingStatuses[index].votingStatus = false;
+                    // console.log('not voted', votingStatuses);
+                    localStorage.setItem('votingStatuses', JSON.stringify(votingStatuses))
+                }
+            }
+        });
+    } else {
+        localStorage.setItem('votingStatuses', JSON.stringify(poll));
+    }
+
     blogPoll.value = poll;
     const fourArticles = art.filter((article) => article.id > 1);
     latestFourArticles.value = fourArticles
@@ -160,7 +218,7 @@ onMounted(async () => {
                   <div
                    id="percentage"
                    v-if="answer.id === selectedAnswer && poll.id === selectedPoll"
-                   :style="{ 'width' : answer.votes * 100 / categoryVotes + '%' }"
+                   :style="{ 'width' : pollAnswerPercentage + '%' }"
                    >
                 </div>
                 <p class="option-name">{{ answer.answer }}</p>
