@@ -252,6 +252,7 @@ onMounted(async () => {
     font-weight: 600;
     font-size: 1.15rem;
     color: #fff;
+    letter-spacing: 0.05rem;
 }
 
 .article-date{
@@ -266,6 +267,7 @@ onMounted(async () => {
 .main-title{
     font-size: 2.35rem;
     margin-bottom: 2%;
+    letter-spacing: 0.05rem;
 }
 
 #heading-wrapper{
@@ -364,6 +366,7 @@ onMounted(async () => {
     text-align: center;
     font-weight: 600;
     height: 14%;
+    letter-spacing: 0.2rem;
 }
 
 .poll-choice {

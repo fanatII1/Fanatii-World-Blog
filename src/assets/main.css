@@ -1,10 +1,12 @@
-/* color palette from <https://github.com/vuejs/theme> */
-@import url('https://www.fontspace.com/maldini-font-f39870');
-
 @font-face {
   font-family: 'Maldini';
-  src: url('../../public/fonts/RenegadePursuit-ywMr5.ttf') format('truetype');
+  src: url('/fonts/Vermin\ Vibes\ 1989.ttf') format('truetype');
 } 
+
+/* @font-face {
+  font-family: 'Maldini';
+  src: url('/fonts/Maldini\ Vibes\ 1989.ttf') format('truetype');
+}  */
 
 :root {
   --vt-c-white: #ffffff;
@@ -70,7 +72,7 @@ html{
 body {
   height: 100vh;
   overflow: hidden;
-  font-family: Roboto,sans-serif;
+  font-family: Maldini;
 }
 
 a:active {
@@ -107,6 +109,7 @@ a:active {
   font-size: 2.2rem;
   text-align: center;
   margin: 2% 0 0.5% 0;
+  letter-spacing: 0.05rem;
 }
 
 #new-articles-heading-read {
@@ -193,8 +196,9 @@ a:active {
 .new-article-title, .date, .category {
   padding-left: 3%;
   line-height: 2.5;
-  font-size: 1.05rem;
+  font-size: 1.18rem;
   font-weight: 600;
+  letter-spacing: 0.05rem;
 }
 
 .category {

@@ -291,7 +291,7 @@ function speakOutArticle(article){
     height: 100%;
     margin: 0 auto;
     font-size: 1rem;
-    // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 0.035rem;
     color: #c3c3c3;
     text-align: left;
 }
@@ -310,7 +310,7 @@ function speakOutArticle(article){
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 500;
   max-width: 1000px;
   margin-top: 2%;
@@ -338,7 +338,7 @@ function speakOutArticle(article){
   
   #buymeacoffee[data-v-fe4562ad] {
     padding: 5%;
-    font-size: 0.5rem;
+    font-size: 0.75rem !important;
     width: 90%;
   }
 
@@ -354,7 +354,7 @@ function speakOutArticle(article){
 
   #buymeacoffee[data-v-fe4562ad] {
     padding: 5%;
-    font-size: 0.6rem;
+    font-size: 0.85rem;
     width: 85%;
   }
 

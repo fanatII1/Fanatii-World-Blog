@@ -147,7 +147,7 @@ nav {
   cursor: pointer;
   transition: 0.6s ease-in-out;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
 }
 
 .nav-item.active a{
