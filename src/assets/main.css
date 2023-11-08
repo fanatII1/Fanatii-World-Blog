@@ -4,7 +4,14 @@
   src: url('./fonts/Vermin.eot') format('embedded-opentype'), /* IE6-IE8 */
        url('./fonts/Vermin.woff2') format('woff2'), /* Super Modern Browsers */
        url('./fonts/Vermin.woff`') format('woff'), /* Pretty Modern Browsers */
+       url(./fonts/Vermin.svg#Vermin) format('svg'),
+       url("./fonts/Vermin.otf") format("opentype");
 } 
+
+/* @font-face {
+  font-family: 'Maldini';
+  src: url('/fonts/Maldini\ Vibes\ 1989.ttf') format('truetype');
+}  */
 
 :root {
   --vt-c-white: #ffffff;
@@ -70,7 +77,7 @@ html{
 body {
   height: 100vh;
   overflow: hidden;
-  font-family: Maldini;
+  font-family: 'Maldini';
 }
 
 a:active {
