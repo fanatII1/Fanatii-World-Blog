@@ -5,8 +5,7 @@
        url('./fonts/Vermin.woff2') format('woff2'), /* Super Modern Browsers */
        url('./fonts/Vermin.woff`') format('woff'), /* Pretty Modern Browsers */
        url(./fonts/Vermin.svg#Vermin) format('svg'),
-       url("./fonts/Vermin.otf") format("opentype");
-} 
+git a} 
 
 /* @font-face {
   font-family: 'Maldini';
