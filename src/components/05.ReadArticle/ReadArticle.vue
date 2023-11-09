@@ -220,17 +220,15 @@ function speakOutArticle(article){
        <section id='article-content'>
         <!-- {{ documentToHtmlString(article, renderOptions) }} -->
         <div class='article-content'  v-html='documentToHtmlString(article, renderOptions)' ></div>
+        <footer id='buymeacoffee'>
+          <p>
+            Creating exclusive content just for you. Your
+            <a href='https://www.buymeacoffee.com/fanatiiworld' id='coffee-link'><b>coffee support</b></a>
+            is much appreciated.☕
+          </p>
+        </footer>
        </section>
     </main>
-
-    
-    <footer id='buymeacoffee'>
-        <p>
-          Creating exclusive content just for you. Your
-          <a href='https://www.buymeacoffee.com/fanatiiworld' id='coffee-link'><b>coffee support</b></a>
-          is much appreciated.☕
-        </p>
-    </footer>
 </template>
 
 <style lang='scss' scoped>
@@ -239,15 +237,15 @@ function speakOutArticle(article){
     overflow: scroll;
 }
 
-#article-wrapper::-webkit-scrollbar {
-    width: 3px;
-    background-color: none;
-}
+// #article-wrapper::-webkit-scrollbar {
+//     width: 13px;
+//     background-color: white;
+// }
 
-#article-wrapper::-webkit-scrollbar-thumb {
-    background-color: #ed1d3c41;
-    border-radius: 2px;
-}
+// #article-wrapper::-webkit-scrollbar-thumb {
+//     background-color: #ff002641;
+//     border-radius: 2px;
+// }
 
 #article-banner {
     height: 63%;
@@ -320,14 +318,14 @@ function speakOutArticle(article){
 
 #buymeacoffee {
   border-radius: 10px;
-  width: 75%;
+  // width: 75%;
   height: 7%;
   background: #242526;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   font-weight: 500;
   max-width: 1000px;
   margin-top: 2%;
@@ -338,13 +336,10 @@ function speakOutArticle(article){
   color:  rgb(255, 0, 189);
 }
 
-@media screen and (max-width: 767px) {
-  #author-wrapper {
-    margin: 6% auto;
-  }
-
-  #article-banner {
-    height: 55%;
+@media screen and (max-width: 375px) {
+  #buymeacoffee[data-v-fe4562ad] {
+    padding: 5%;
+    font-size: 0.45rem !important;
   }
 }
 
@@ -355,8 +350,7 @@ function speakOutArticle(article){
   
   #buymeacoffee[data-v-fe4562ad] {
     padding: 5%;
-    font-size: 0.75rem !important;
-    width: 90%;
+    font-size: 0.47rem !important;
   }
 
   .rtc-img-wrapper {
@@ -371,8 +365,17 @@ function speakOutArticle(article){
 
   #buymeacoffee[data-v-fe4562ad] {
     padding: 5%;
-    font-size: 0.85rem;
-    width: 85%;
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #author-wrapper {
+    margin: 6% auto;
+  }
+
+  #article-banner {
+    height: 55%;
   }
 }
 
@@ -392,27 +395,9 @@ function speakOutArticle(article){
 
   #buymeacoffee {
     padding: 5%;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 }
-
-
-@media screen and (max-width: 1024px) {
-  .all-new-articles {
-    height: 50%;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .rtc-paragraph {
-    margin: 5% 0 !important;
-  }
-
-  .rtc-img-wrapper {
-    max-height: 450px !important;
-  }
-}
-
 
 
 /*STYLES FOR THE READ ARTICLES PAGE ARE DEFINED HERE BECAUSE THE RICH TEXT EDITOR OF THE CMS MUST HAVE ITS STYLES GLOBAL TO THE HTML PAGE*/
