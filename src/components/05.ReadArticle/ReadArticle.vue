@@ -220,14 +220,15 @@ function speakOutArticle(article){
        <section id='article-content'>
         <!-- {{ documentToHtmlString(article, renderOptions) }} -->
         <div class='article-content'  v-html='documentToHtmlString(article, renderOptions)' ></div>
-        <footer id='buymeacoffee'>
-          <p>
-            Creating exclusive content just for you. Your
-            <a href='https://www.buymeacoffee.com/fanatiiworld' id='coffee-link'><b>coffee support</b></a>
-            is much appreciated.☕
-          </p>
-        </footer>
        </section>
+
+      <footer id='buymeacoffee'>
+        <p>
+          Creating exclusive content just for you. Your
+          <a href='https://www.buymeacoffee.com/fanatiiworld' id='coffee-link'><b>coffee support</b></a>
+          is much appreciated.☕
+        </p>
+      </footer>
     </main>
 </template>
 
@@ -238,12 +239,13 @@ function speakOutArticle(article){
 }
 
 #article-wrapper::-webkit-scrollbar {
-    width: 13px;
-    background-color: white;
+    width: 0px;
+    // background-color: white;
 }
 
 #article-wrapper::-webkit-scrollbar-thumb {
     background-color: #ff002641;
+    width: 1px;
     border-radius: 2px;
 }
 
@@ -302,7 +304,7 @@ function speakOutArticle(article){
 
 #article-content {
     width: 85%;
-    height: 100%;
+    // height: 100%;
     margin: 0 auto;
     font-size: 1rem;
     letter-spacing: 0.035rem;
@@ -318,7 +320,7 @@ function speakOutArticle(article){
 
 #buymeacoffee {
   border-radius: 10px;
-  // width: 75%;
+  width: 75%;
   height: 7%;
   background: #242526;
   margin: 0 auto;
