@@ -86,7 +86,6 @@ a:active {
 }
 
 #app::-webkit-scrollbar {
-  width: 0.1px;
   background-color: none;
 }
 
