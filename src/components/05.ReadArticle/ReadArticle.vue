@@ -13,22 +13,38 @@ const articleInfo = articlesStore.fetchArticle(articleId);
 const article = articleInfo.article;
 
 function listItemElementCreator(list, value) {
+  // console.log(list)
   if(typeof value.marks[0] === 'undefined') {
-    const li = document.createElement("li");
+    const li = document.createElement('li');
     li.className = 'sub-list-item';
     li.textContent = value.value;
     list.appendChild(li);
-    // console.log(inlineUL)
     return list
   } else {
-    const li = document.createElement("li");
-    li.style.fontWeight = 'bold';
-    li.classList = 'main-list-item';
+
+    let listLastChild = list.tagName === 'UL' ? list.lastChild : null;
+    
+    if(listLastChild) {
+      const span = document.createElement('span');
+      span.textContent = value.value;
+      span.style.fontStyle = 'italic';
+      span.style.textDecoration = 'underline';
+      listLastChild.appendChild(span);
+      span.style.color = '#fff';
+    }else {
+      const li = document.createElement('li');
+    li.style.color = '#fff';
+    li.classList = list.tagName === 'UL' ? 'sub-list-item' : 'main-list-item';
+    li.style.fontSize = list.tagName === 'UL' ? '0.65rem' : '0.8rem';
     li.textContent = value.value;
     list.appendChild(li);
-    // console.log(inlineUL)
+
+    }
+
+    
     return list
   }
+
 }
 
 function ListItemCreator(listType, listItems) {
@@ -44,7 +60,7 @@ function ListItemCreator(listType, listItems) {
           }) 
         }
         else if(value.nodeType === 'unordered-list') {
-          const inlineUL = document.createElement("ul");
+          const inlineUL = document.createElement('ul');
           let inlineListItems = listItemContent;
           inlineListItems.forEach((inlineItem) => {
             let itemContent = inlineItem.content;
@@ -97,7 +113,7 @@ const renderOptions = {
             link.setAttribute('href', value.data.uri);
             link.textContent = value.content[0].value;
             link.style.color = '#ff00bd';
-            console.log(div.lastChild)
+            // console.log(div.lastChild)
             let currentTextForLink = div.lastChild;
             currentTextForLink.appendChild(link)
             // div.appendChild(link)
@@ -157,7 +173,7 @@ const renderOptions = {
         target={${data.uri.startsWith(website_url) ? '_self' : '_blank'}}
         >{children}</a>`
       },
-      [MARKS.BOLD]: (node, children)=>{
+      [MARKS.ITALIC]: (node, children)=>{
         console.log('hi')
         return `<b></b>`
       }
@@ -183,41 +199,41 @@ function speakOutArticle(article){
 </script>
 
 <template>
-    <main id="article-wrapper">
-        <section id="article-banner">
-            <img :src="articleInfo.img" alt="" id="article-banner-img">
+    <main id='article-wrapper'>
+        <section id='article-banner'>
+            <img :src='articleInfo.img' alt='' id='article-banner-img'>
         </section>
         
-        <div id="heading-wrapper">
-            <h2 id="new-articles-heading-read">{{ articleInfo.title }} <i @click="readArticle" class="fa-solid fa-volume-high"></i></h2>
-            <div class="heading-underline"></div>
+        <div id='heading-wrapper'>
+            <h2 id='new-articles-heading-read'>{{ articleInfo.title }} <i @click='readArticle' class='fa-solid fa-volume-high'></i></h2>
+            <div class='heading-underline'></div>
        </div>
 
-       <div id="author-wrapper">
-            <img :src="articleInfo.authorImg" alt="" class="authorImg">
-            <div class="author-description">
-              <RouterLink id="author" to="/author">By: {{ articleInfo.author }}</RouterLink>
+       <div id='author-wrapper'>
+            <img :src='articleInfo.authorImg' alt='' class='authorImg'>
+            <div class='author-description'>
+              <RouterLink id='author' to='/author'>By: {{ articleInfo.author }}</RouterLink>
               <p>web developer, gamer and tech advocate</p>
             </div>
        </div>
 
-       <section id="article-content">
+       <section id='article-content'>
         <!-- {{ documentToHtmlString(article, renderOptions) }} -->
-        <div class="article-content"  v-html="documentToHtmlString(article, renderOptions)" ></div>
+        <div class='article-content'  v-html='documentToHtmlString(article, renderOptions)' ></div>
        </section>
     </main>
 
     
-    <footer id="buymeacoffee">
+    <footer id='buymeacoffee'>
         <p>
           Creating exclusive content just for you. Your
-          <a href="https://www.buymeacoffee.com/fanatiiworld" id="coffee-link"><b>coffee support</b></a>
+          <a href='https://www.buymeacoffee.com/fanatiiworld' id='coffee-link'><b>coffee support</b></a>
           is much appreciated.☕
         </p>
     </footer>
 </template>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
 #article-wrapper {
     height: 100%;
     overflow: scroll;
@@ -273,14 +289,14 @@ function speakOutArticle(article){
 #author, #author:active {
   margin-left: 2.5%;
   color:  rgb(255, 0, 189);
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   width: 100%;
   display: block;
 }
 
 .author-description p {
   margin-left: 2.5%;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   color: gray;
   font-style: italic;
   font-weight: 300;
@@ -294,6 +310,7 @@ function speakOutArticle(article){
     letter-spacing: 0.035rem;
     color: #c3c3c3;
     text-align: left;
+    line-height: 2;
 }
 
 .fa-volume-high {
@@ -356,14 +373,6 @@ function speakOutArticle(article){
     padding: 5%;
     font-size: 0.85rem;
     width: 85%;
-  }
-
-  .rtc-paragraph-inline {
-    margin: 5% 0;
-  }
-
-  .rtc-heading-2 {
-    margin-top: 12%;
   }
 }
 

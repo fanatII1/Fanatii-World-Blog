@@ -307,8 +307,8 @@ onMounted(async () => {
     bottom: 0;
     z-index: 3;
     margin: 0 0 5% 3%;
-    font-weight: 600;
-    font-size: 1.15rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
     color: #fff;
     letter-spacing: 0.05rem;
 }
@@ -323,7 +323,7 @@ onMounted(async () => {
 }
 
 .main-title{
-    font-size: 2.35rem;
+    font-size: 1.75rem;
     margin-bottom: 2%;
     letter-spacing: 0.05rem;
 }
@@ -367,7 +367,7 @@ onMounted(async () => {
     margin-left: 3%;
     text-align: center;
     width: 50%;
-    height: 40px;
+    height: 30px;
     margin-left: 2%;
     display: flex;
     justify-content: center;
@@ -415,15 +415,16 @@ onMounted(async () => {
 }
 
 .poll-question {
+    display: flex;
+    align-items: center;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     background: #242526;
     padding: 2%;
     color: #fff;
-    font-size: 1.4rem;
+    font-size: 0.9rem;
     text-align: center;
-    font-weight: 600;
-    height: 14%;
+    height: 15%;
     letter-spacing: 0.2rem;
 }
 
@@ -432,7 +433,7 @@ onMounted(async () => {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .opt {
@@ -443,7 +444,6 @@ onMounted(async () => {
     align-items: center;
     padding: 5%;
     color: #fff;
-    font-weight: 600;
     border: 1px solid  rgb(255, 0, 189);
     -webkit-box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
     -moz-box-shadow: 0 0 11px 1.5px  rgb(255, 0, 189);
@@ -460,6 +460,7 @@ onMounted(async () => {
 .option-name {
     position: absolute;
     z-index: 3;
+    letter-spacing: 0.1em;
 }
 
 #percentage {
@@ -469,6 +470,15 @@ onMounted(async () => {
     height: 100%;
     background:  rgb(255, 0, 189);
     z-index: 2;
+}
+
+@media screen and (min-width: 1025px) {
+    #poll {
+        height: 55%;
+    }
+    .poll-area {
+        max-width: 385px;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -490,12 +500,31 @@ onMounted(async () => {
     }
 
     .main-title {
-        font-size: 1.85rem;
+        font-size: 1.45rem !important;
+        margin: 0 0 5% 3% !important;
     }
 
     .title {
-        font-size: 1rem;
-        line-height: 1.4;
+        font-size: 0.7rem;
+        line-height: 1.55;
+        margin: 0 0 11.5% 3%
+    }
+
+    #poll {
+        height: 55%;
+    }
+
+    .poll-area {
+        max-height: 450px;
+        margin: 0 auto;
+    }
+
+    .poll-question {
+        font-size: 0.7rem;
+    }
+
+    .poll-choice {
+        font-size: 0.6rem;
     }
 }
 
@@ -512,28 +541,25 @@ onMounted(async () => {
         font-size: 1.9rem;
     }
 
-    /* #poll {
-        height: 40%;
-    } */
-
     .poll-question {
         font-size: 0.9rem;
-    }
-
-    .option-name {
-        font-size: 0.7rem;
     }
 }
 
 @media screen and (max-width: 425px) {
-    
     .new-article-title {
         font-size: 0.9rem;
     }
 
+    .main-title {
+        font-size: 1.45rem !important;
+        margin: 0 0 5% 3% !important;
+    }
+
     .title {
-        font-size: 1rem !important;
+        font-size: 0.55rem !important;
         bottom: 3.5%;
+        margin: 0 0 5% 3%;
         line-height: 1.6;
     }
 
@@ -547,33 +573,13 @@ onMounted(async () => {
     .menu {
         display: none;
     }
-}
-
-@media screen and (max-width: 1024px) {
-    #poll {
-        height: 55%;
-    }
-
-    .poll-area {
-        max-height: 450px;
-        margin: 0 auto;
-    }
 
     .poll-question {
-        font-size: 1.2rem;
+        font-size: 0.75rem;
     }
 
-    .main-title {
-        font-size: 1.8rem;
-    }
-}
-
-@media screen and (min-width: 1025px) {
-    #poll {
-        height: 55%;
-    }
-    .poll-area {
-        max-width: 385px;
+    .poll-choice {
+        font-size: 0.55rem;
     }
 }
 

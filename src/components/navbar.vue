@@ -109,6 +109,12 @@ nav {
   overflow: hidden;
 }
 
+@media screen and (min-height: 600px) and (max-height: 670px) {
+  nav {
+    height: 81%;
+  }
+}
+
 
 .navbar a{
   color: #fff;
@@ -139,15 +145,13 @@ nav {
   justify-content: space-evenly;
   align-items: center;
   font-size: 1rem;
-  font-weight: 700;
 }
 
 .nav-item {
   margin: 0 10px;
   cursor: pointer;
   transition: 0.6s ease-in-out;
-  font-weight: bold;
-  font-size: 1.05rem;
+  font-size: 0.75rem;
 }
 
 .nav-item.active a{
@@ -255,6 +259,12 @@ input:focus{
   font-size: 1.5rem;
 }
 
+@media screen and (max-width: 1024px) {
+  .nav-item {
+    font-size: 0.65rem;
+  }
+}
+
 @media screen and (max-width: 680px) {
   .nav-item-2 {
     display: none;
@@ -273,9 +283,4 @@ input:focus{
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .nav-item {
-    font-size: 0.9rem;
-  }
-}
 </style>

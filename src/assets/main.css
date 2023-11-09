@@ -8,11 +8,6 @@
        url("./fonts/Vermin.otf") format("opentype");
 } 
 
-/* @font-face {
-  font-family: 'Maldini';
-  src: url('/fonts/Maldini\ Vibes\ 1989.ttf') format('truetype');
-}  */
-
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
@@ -111,15 +106,19 @@ a:active {
 
 #new-articles-heading{
   color: #fff;
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   text-align: center;
   margin: 2% 0 0.5% 0;
   letter-spacing: 0.05rem;
 }
 
+.sub-main-list {
+  font-size: 0.65rem !important;
+}
+
 #new-articles-heading-read {
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 1.9rem;
   text-align: center;
   margin: 2% 0 0.5% 0;
 }
@@ -154,10 +153,6 @@ a:active {
   justify-content: center;
   align-items: center;
 
-}
-
-.span-new-article-title {
-  font-size: 1rem;
 }
 
 .new-article{
@@ -201,8 +196,7 @@ a:active {
 .new-article-title, .date, .category {
   padding-left: 3%;
   line-height: 2.5;
-  font-size: 1.18rem;
-  font-weight: 600;
+  font-size: 0.65rem;
   letter-spacing: 0.05rem;
 }
 
@@ -249,7 +243,10 @@ a:active {
 
 .rtc-paragraph-inline {
   margin: 1% 0;
-  font-size: 1.05rem;
+  font-size: 0.675rem;
+  word-spacing: 0.1rem;
+  letter-spacing: 0.055rem;
+
 }
 
 .rtc-paragraph-block {
@@ -300,10 +297,24 @@ ul {
 
 .rtc-heading-2 {
   margin: 2.5% 0;
+  color: #fff;
+  font-size: 0.95rem;
 }
 
 .article-content ol {
   list-style-type: circle;
+}
+
+.sub-list-item {
+  list-style-type: none;
+  font-size: 0.65rem;
+  word-spacing: 0.1rem;
+  letter-spacing: 0.055rem;
+  line-height: 2;
+}
+
+.sub-list-item::before {
+  content: '🖥️';
 }
 
 
@@ -311,7 +322,7 @@ ul {
 /* RESPONSIVENESS */
 @media screen and (max-width: 1024px) {
   #new-articles-heading{
-    font-size: 1.9rem;
+    font-size: 1.45rem;
   }
 
   #new-articles-heading-read {
@@ -324,11 +335,11 @@ ul {
   }
 
   .span-new-article-title {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 
   .new-article-title, .date, .category {
-    font-size: 0.8rem !important;
+    font-size: 0.6rem !important;
   }
 
   .rtc-paragraph-inline {
@@ -352,12 +363,16 @@ ul {
   }
 
   .sub-list-item {
-    list-style-type: none;
     margin: 2% 0 2% 2% !important;
+
   }
 }
 
 @media screen and (max-width: 638px) {
+  #new-articles-heading{
+    font-size: 1.5rem !important;
+  }
+
   .rtc-paragraph-inline {
     margin: 3.5% 0 !important;
   }
@@ -374,10 +389,6 @@ ul {
     font-size: 1.2rem;
   }
 
-  #author {
-    font-size: 0.9rem !important;
-  }
-
   .author-description {
     font-size: 0.75rem !important;
   }
@@ -385,16 +396,15 @@ ul {
 
 @media screen and (max-width: 425px) {
   .rtc-img-wrapper {
-    max-height: 360px;
+    max-height: 165px !important;
   }
-
   .rtc-paragraph-inline {
     margin: 1% 0;
-    font-size: 0.9rem !important;
+    font-size: 0.7rem !important;
   }
 
   .article-content ol {
-    font-size: 0.75rem !important;
+    font-size: 0.7rem !important;
   }
 
   .author-content {
@@ -403,14 +413,8 @@ ul {
   }
 
   .sub-list-item {
-    list-style-type: none;
     margin: 3% 0 3% 3%;
   }
-}
-
-.sub-list-item {
-  list-style-type: none;
-  margin-left: 1.5%;
 }
 
 @media screen and (max-width: 335px) {
@@ -423,7 +427,7 @@ ul {
 @media screen and (min-width:426px) and (max-width: 435px) {
   .rtc-paragraph-inline {
     margin: 1% 0;
-    font-size: 0.9rem !important;
+    font-size: 0.75rem !important;
   }
 }
 
