@@ -237,15 +237,15 @@ function speakOutArticle(article){
     overflow: scroll;
 }
 
-// #article-wrapper::-webkit-scrollbar {
-//     width: 13px;
-//     background-color: white;
-// }
+#article-wrapper::-webkit-scrollbar {
+    width: 13px;
+    background-color: white;
+}
 
-// #article-wrapper::-webkit-scrollbar-thumb {
-//     background-color: #ff002641;
-//     border-radius: 2px;
-// }
+#article-wrapper::-webkit-scrollbar-thumb {
+    background-color: #ff002641;
+    border-radius: 2px;
+}
 
 #article-banner {
     height: 63%;
