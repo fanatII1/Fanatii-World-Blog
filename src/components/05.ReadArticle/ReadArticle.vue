@@ -320,7 +320,7 @@ function speakOutArticle(article){
 
 #buymeacoffee {
   border-radius: 10px;
-  width: 75%;
+  width: 80%;
   height: 7%;
   background: #242526;
   margin: 0 auto;
@@ -341,7 +341,7 @@ function speakOutArticle(article){
 @media screen and (max-width: 375px) {
   #buymeacoffee[data-v-fe4562ad] {
     padding: 5%;
-    font-size: 0.45rem !important;
+    font-size: 0.4rem !important;
   }
 }
 
