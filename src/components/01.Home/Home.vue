@@ -532,6 +532,11 @@ onMounted(async () => {
     .main-latest {
         display: none;
     }
+    
+    .all-new-articles {
+       min-height: 1400px;
+     }
+
 
     .sub-latest {
         width: 100%;
@@ -547,6 +552,10 @@ onMounted(async () => {
 }
 
 @media screen and (max-width: 425px) {
+
+    .all-new-articles {
+       min-height: 2550px;
+    }
     .new-article-title {
         font-size: 0.9rem;
     }
@@ -581,6 +590,13 @@ onMounted(async () => {
     .poll-choice {
         font-size: 0.55rem;
     }
+}
+
+@media screen and (max-width: 638px) {
+
+  .all-new-articles {
+    min-height: 3000px;
+  }
 }
 
 </style>

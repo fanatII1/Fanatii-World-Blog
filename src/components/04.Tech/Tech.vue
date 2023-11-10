@@ -50,6 +50,13 @@ onBeforeMount(() => {
 </template>
 
 <style lang="scss" scoped>
+@media screen and (max-width: 638px) {
+    .all-new-articles {
+       max-height: 450px !important;
+       min-height: auto;
+    }
+}
+
 #developer-wrapper {
     height: 100%;
     overflow: scroll;

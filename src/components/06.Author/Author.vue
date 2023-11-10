@@ -20,7 +20,7 @@ onBeforeMount(() => {
             </p>
             
             <p class="description">
-                My name is Mandla, the sole owner of Fanatii World🚀🎮💻.
+                My name is Mandlenkosi, the sole owner of Fanatii World🚀🎮💻.
                 <br/>
                 I'm a Web Developer who specializes in the creation of websites and web apps.
                 But I am also a very passionate gamer, and a tech advocate/creator.
@@ -48,7 +48,7 @@ onBeforeMount(() => {
     width: 35%;
     height: 50%;
     margin: 0 auto;
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     font-weight: 100;
     color: #c3c3c3;
     line-height: 1.345;
