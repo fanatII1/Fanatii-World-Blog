@@ -1,5 +1,5 @@
 <script setup>
-import logo from '../assets/logo.png';
+import logo from '../assets/logo_rm_bg.png';
 import { ref, watch, computed } from 'vue';
 import { useArticlesStore } from '../stores/articles';
 

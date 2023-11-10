@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia';
-import image from '../assets/spiderman.webp';
 
 export const useArticlesStore = defineStore('articles', {
   state: () => ({
