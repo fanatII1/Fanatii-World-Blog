@@ -338,13 +338,13 @@ onMounted(async () => {
 .all-new-articles {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 280px));
-    grid-auto-rows: 100%;
+    // grid-auto-rows: 100%;
     justify-content: center;
     gap: 2%;
-    height: 50%;
-    max-height: 850px;
+    // height: 50%;
+    // max-height: 850px;
     margin: 3% 0;
-    overflow: scroll;
+    // overflow: scroll;
 }
 
 .all-new-articles::-webkit-scrollbar {
@@ -483,7 +483,7 @@ onMounted(async () => {
 
 @media screen and (max-width: 1024px) {
     .all-new-articles {
-        height: 50%;
+        // height: 50%;
     }
 
     .developers, .gaming, .tech {
