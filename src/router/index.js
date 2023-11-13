@@ -37,7 +37,7 @@ const router = createRouter({
     {
       path: '/ads.txt',
       name: 'ads',
-      component: () => import('../views/ads.txt')   
+      component: () => import('/ads.txt')   
     }
   ]
 })
