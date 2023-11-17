@@ -13,16 +13,20 @@ const articleInfo = articlesStore.fetchArticle(articleId);
 const article = articleInfo.article;
 
 function listItemElementCreator(list, value) {
-  // console.log(list)
-  if(typeof value.marks[0] === 'undefined') {
+  // console.log(value, value.marks.propertyThatDoesNotExist)
+  // console.log(value.marks[0], typeof value.marks[0] === 'undefined')
+  if(value.marks){
+    if(typeof value.marks[0] === 'undefined') {
+    // console.log('yo 1')
     const li = document.createElement('li');
     li.className = 'sub-list-item';
     li.textContent = value.value;
     list.appendChild(li);
     return list
   } else {
-
+    // console.log('yo 222')
     let listLastChild = list.tagName === 'UL' ? list.lastChild : null;
+    // console.log(listLastChild)
     
     if(listLastChild) {
       const span = document.createElement('span');
@@ -33,24 +37,27 @@ function listItemElementCreator(list, value) {
       span.style.color = '#fff';
     }else {
       const li = document.createElement('li');
-    li.style.color = '#fff';
-    li.classList = list.tagName === 'UL' ? 'sub-list-item' : 'main-list-item';
-    li.style.fontSize = list.tagName === 'UL' ? '0.65rem' : '0.8rem';
-    li.textContent = value.value;
-    list.appendChild(li);
+      li.style.color = '#fff';
+      li.classList = list.tagName === 'UL' ? 'sub-list-item' : 'main-list-item';
+      li.style.fontSize = list.tagName === 'UL' ? '0.65rem' : '0.8rem';
+      li.textContent = value.value;
+      list.appendChild(li);
 
     }
+  }
 
-    
+    // console.log(list)
     return list
   }
 
 }
 
 function ListItemCreator(listType, listItems) {
+  // console.log(listType)
   const list = document.createElement(listType);
   listItems.forEach((listItem) => {
     let listItemValues = listItem.content;
+    
     //for each value we are going to return a <li>
       listItemValues.forEach((value) => {
         let listItemContent = value.content;
@@ -116,6 +123,7 @@ const renderOptions = {
             // console.log(div.lastChild)
             let currentTextForLink = div.lastChild;
             currentTextForLink.appendChild(link)
+            // console.log(currentTextForLink)
             // div.appendChild(link)
           }
           else {
@@ -155,6 +163,7 @@ const renderOptions = {
         return `<h6 class='rtc-heading-6'>${node.content[0].value}</h6>`
       },
       [BLOCKS.UL_LIST] : (node, children)=>{
+        console.log('hiii')
         let listItems = node.content;
         let list = ListItemCreator('ul', listItems)
         // return the created html as a string to mend in the document(HTML
@@ -162,11 +171,13 @@ const renderOptions = {
         return list.outerHTML
       },
       [BLOCKS.OL_LIST] : (node, children)=>{
+        // console.log('hiii')
         let listItems = node.content;
         let list = ListItemCreator('ol', listItems)
         return list.outerHTML
       },
       [INLINES.HYPERLINK]: ({ data }, children) => {
+        console.log(data)
         return 
         `<a
         href={data.uri}
