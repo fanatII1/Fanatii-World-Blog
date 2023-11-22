@@ -39,7 +39,7 @@ function listItemElementCreator(list, value) {
       const li = document.createElement('li');
       li.style.color = '#fff';
       li.classList = list.tagName === 'UL' ? 'sub-list-item' : 'main-list-item';
-      li.style.fontSize = list.tagName === 'UL' ? '0.65rem' : '0.8rem';
+      li.style.fontSize = list.tagName === 'UL' ? '0.65rem' : '1rem';
       li.textContent = value.value;
       list.appendChild(li);
 

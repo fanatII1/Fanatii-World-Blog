@@ -305,7 +305,6 @@ ul {
 .rtc-heading-2 {
   margin: 2.5% 0;
   color: #fff;
-  font-size: 0.95rem;
 }
 
 .article-content ol {
@@ -314,14 +313,13 @@ ul {
 
 .sub-list-item {
   list-style-type: none;
-  font-size: 0.65rem;
   word-spacing: 0.1rem;
   letter-spacing: 0.055rem;
   line-height: 2;
 }
 
 .sub-list-item::before {
-  content: '🖥️';
+  content: '🔎';
 }
 
 
