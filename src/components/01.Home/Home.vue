@@ -583,7 +583,7 @@ onMounted(async () => {
 @media screen and (max-width: 638px) {
 
   .all-new-articles {
-    min-height: 3000px;
+    min-height: 5700px;
   }
 }
 
