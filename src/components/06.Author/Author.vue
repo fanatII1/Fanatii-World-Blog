@@ -41,7 +41,6 @@ onBeforeMount(() => {
 <style lang="scss" scoped>
 #author-wrapper {
     height: 100%;
-    overflow: scroll;
 }
 
 .author-content {

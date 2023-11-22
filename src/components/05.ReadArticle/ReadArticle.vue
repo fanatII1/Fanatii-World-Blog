@@ -307,7 +307,7 @@ function speakOutArticle(article){
 
 .author-description p {
   margin-left: 2.5%;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   color: gray;
   font-style: italic;
   font-weight: 300;
