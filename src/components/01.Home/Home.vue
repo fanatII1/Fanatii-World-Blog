@@ -276,9 +276,7 @@ onMounted(async () => {
     top: 0;
     width: 100%;
     height: 100%;
-    background:  rgb(255, 0, 189);
-    background: -webkit-linear-gradient(181deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 60%, rgb(255 0 189));
-    background: linear-gradient(181deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 60%, rgb(255 0 189));
+    background:  rgb(0 0 0 / 26%);
     z-index: 2;
 }
 
@@ -307,7 +305,6 @@ onMounted(async () => {
     bottom: 0;
     z-index: 3;
     margin: 0 0 5% 3%;
-    font-size: 0.8rem;
     line-height: 1.5;
     color: #fff;
     letter-spacing: 0.05rem;
@@ -324,6 +321,7 @@ onMounted(async () => {
 
 .main-title{
     font-size: 1.75rem;
+    font-weight: 900;
     margin-bottom: 2%;
     letter-spacing: 0.05rem;
 }
@@ -422,7 +420,6 @@ onMounted(async () => {
     background: #242526;
     padding: 2%;
     color: #fff;
-    font-size: 0.9rem;
     text-align: center;
     height: 15%;
     letter-spacing: 0.2rem;
@@ -433,7 +430,7 @@ onMounted(async () => {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 
 .opt {
@@ -505,7 +502,7 @@ onMounted(async () => {
     }
 
     .title {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         line-height: 1.55;
         margin: 0 0 11.5% 3%
     }
@@ -519,12 +516,8 @@ onMounted(async () => {
         margin: 0 auto;
     }
 
-    .poll-question {
-        font-size: 0.7rem;
-    }
-
     .poll-choice {
-        font-size: 0.6rem;
+        font-size: 0.7rem;
     }
 }
 
@@ -566,7 +559,6 @@ onMounted(async () => {
     }
 
     .title {
-        font-size: 0.55rem !important;
         bottom: 3.5%;
         margin: 0 0 5% 3%;
         line-height: 1.6;
@@ -583,12 +575,8 @@ onMounted(async () => {
         display: none;
     }
 
-    .poll-question {
-        font-size: 0.75rem;
-    }
-
     .poll-choice {
-        font-size: 0.55rem;
+        font-size: 0.75rem;
     }
 }
 

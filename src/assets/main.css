@@ -1,12 +1,15 @@
-@font-face {
+/* @font-face {
   font-family: 'Maldini';
   src: url('./fonts/Vermin.ttf') format('truetype');
-  src: url('./fonts/Vermin.eot') format('embedded-opentype'), /* IE6-IE8 */
-       url('./fonts/Vermin.woff2') format('woff2'), /* Super Modern Browsers */
-       url('./fonts/Vermin.woff`') format('woff'), /* Pretty Modern Browsers */
+  src: url('./fonts/Vermin.eot') format('embedded-opentype'),
+       url('./fonts/Vermin.woff2') format('woff2'),
+       url('./fonts/Vermin.woff`') format('woff'),
        url(./fonts/Vermin.svg#Vermin) format('svg'),
        url("./fonts/Vermin.otf") format("opentype");
-} 
+}  */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cabin:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cabin:wght@400;500;700&display=swap');
 
 :root {
   --vt-c-white: #ffffff;
@@ -72,7 +75,9 @@ html{
 body {
   height: 100vh;
   overflow: hidden;
-  font-family: 'Maldini';
+  /* font-family: 'Maldini'; */
+  font-family: 'Anton', sans-serif;
+  font-family: 'Cabin', sans-serif;
 }
 
 a:active {
@@ -198,7 +203,8 @@ a:active {
 .new-article-title, .date, .category {
   padding-left: 3%;
   line-height: 2.5;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 700;
   letter-spacing: 0.05rem;
 }
 
@@ -245,7 +251,6 @@ a:active {
 
 .rtc-paragraph-inline {
   margin: 1% 0;
-  font-size: 0.675rem;
   word-spacing: 0.1rem;
   letter-spacing: 0.055rem;
 
@@ -337,16 +342,16 @@ ul {
   }
 
   .span-new-article-title {
-    font-size: 0.7rem;
+    font-size: 0.85rem;
   }
 
   .new-article-title, .date, .category {
-    font-size: 0.6rem !important;
+    font-size: 0.75rem !important;
   }
 
   .rtc-paragraph-inline {
     margin: 1% 0;
-    font-size: 0.7rem !important;
+    font-size: 0.9rem !important;
   }
 
 }
@@ -404,7 +409,7 @@ ul {
   }
   .rtc-paragraph-inline {
     margin: 1% 0;
-    font-size: 0.7rem !important;
+    font-size: 0.8rem !important;
   }
 
   .article-content ol {
@@ -428,14 +433,6 @@ ul {
 
   .rtc-paragraph-inline {
     margin: 1% 0;
-    font-size: 0.75rem !important;
-  }
-}
-
-@media screen and (min-width:426px) and (max-width: 435px) {
-  .rtc-paragraph-inline {
-    margin: 1% 0;
-    font-size: 0.75rem !important;
   }
 }
 

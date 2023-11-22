@@ -70,7 +70,13 @@ onBeforeMount(() => {
 }
 
 .socials {
-    font-size: 2rem;
+    font-size: 1.7rem;
+}
+
+@media screen and (min-width: 768px) {
+    .socials{
+        font-size: 1.4rem;
+    }
 }
 
 .socials a, .socials a:active {

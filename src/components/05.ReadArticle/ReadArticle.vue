@@ -300,7 +300,7 @@ function speakOutArticle(article){
 #author, #author:active {
   margin-left: 2.5%;
   color:  rgb(255, 0, 189);
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   width: 100%;
   display: block;
 }
@@ -338,7 +338,7 @@ function speakOutArticle(article){
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   font-weight: 500;
   max-width: 1000px;
   margin-top: 2%;
@@ -363,7 +363,6 @@ function speakOutArticle(article){
   
   #buymeacoffee[data-v-fe4562ad] {
     padding: 5%;
-    font-size: 0.47rem !important;
   }
 
   .rtc-img-wrapper {
@@ -378,7 +377,7 @@ function speakOutArticle(article){
 
   #buymeacoffee[data-v-fe4562ad] {
     padding: 5%;
-    font-size: 0.5rem;
+    font-size: 0.68rem !important;
   }
 }
 
@@ -408,7 +407,7 @@ function speakOutArticle(article){
 
   #buymeacoffee {
     padding: 5%;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
 
